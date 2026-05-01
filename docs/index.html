@@ -3,150 +3,282 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Regulatory Tracker — International Compliance Database</title>
+<title>Regulatory Tracker — International Compliance Directory</title>
 <style>
   :root {
-    --bg: #f7f8fb; --card: #ffffff; --border: #e5e7eb;
-    --ink: #0f172a; --muted: #64748b;
-    --brand: #2563eb; --brand-soft: #eff6ff;
-    --green: #16a34a; --green-soft: #dcfce7;
-    --amber: #d97706; --amber-soft: #fef3c7;
-    --red: #dc2626; --red-soft: #fee2e2;
-    --slate: #475569; --slate-soft: #f1f5f9;
-    --shadow: 0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --border: #e3e6ee;
+    --border-strong: #cbd2dc;
+    --ink: #0f172a;
+    --ink-soft: #1e293b;
+    --muted: #64748b;
+    --muted-2: #94a3b8;
+    --brand: #2563eb;
+    --brand-700: #1d4ed8;
+    --brand-soft: #eff6ff;
+    --green: #15803d;
+    --green-soft: #dcfce7;
+    --amber: #b45309;
+    --amber-soft: #fef3c7;
+    --red: #b91c1c;
+    --red-soft: #fee2e2;
+    --slate: #475569;
+    --slate-soft: #f1f5f9;
+    --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
+    --shadow-md: 0 4px 16px rgba(15,23,42,.06), 0 1px 3px rgba(15,23,42,.05);
   }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
+    background: var(--bg); color: var(--ink);
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    font-size: 14px; line-height: 1.5;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-  .topbar { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px 22px; display: flex; align-items: center; gap: 18px; box-shadow: var(--shadow); margin-bottom: 18px; flex-wrap: wrap; }
-  .topbar h1 { margin: 0; font-size: 18px; color: var(--brand); font-weight: 700; }
-  .topbar .sub { color: var(--muted); font-size: 14px; }
-  .tabs { margin-left: auto; display: flex; gap: 8px; }
-  .tab { padding: 8px 16px; border-radius: 10px; background: var(--slate-soft); color: var(--slate); font-weight: 600; font-size: 14px; cursor: pointer; border: 1px solid transparent; }
-  .tab.active { background: var(--brand); color: #fff; }
+  /* Header */
+  .topbar {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 28px;
+    display: flex; align-items: center; gap: 18px;
+    position: sticky; top: 0; z-index: 50;
+  }
+  .topbar h1 { margin: 0; font-size: 17px; font-weight: 700; color: var(--brand); letter-spacing: -.01em; }
+  .topbar .sub { color: var(--muted); font-size: 13px; }
+  .topbar .right { margin-left: auto; display: flex; gap: 16px; align-items: center; color: var(--muted); font-size: 12px; }
+  .topbar .right .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px var(--green-soft); }
 
-  .selector { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px 22px; box-shadow: var(--shadow); margin-bottom: 18px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-  .selector label { font-weight: 700; font-size: 15px; }
-  .selector input[type=search] { flex: 0 0 260px; border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px; font-size: 14px; background: #fafafa; }
-  .pills { display: flex; gap: 8px; flex-wrap: wrap; }
-  .pill { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); font-size: 14px; cursor: pointer; color: var(--ink); }
-  .pill:hover { border-color: var(--brand); }
-  .pill.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 24px 28px 60px; }
 
-  .hero { border-radius: 16px; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%); color: #fff; padding: 28px 30px; margin-bottom: 18px; box-shadow: var(--shadow); }
-  .hero .eyebrow { letter-spacing: .14em; font-size: 11px; opacity: .85; margin-bottom: 6px; text-transform: uppercase; }
-  .hero h2 { margin: 0 0 6px 0; font-size: 28px; font-weight: 700; }
-  .hero p { margin: 0; opacity: .9; font-size: 14px; }
-  .hero .stats { display: flex; gap: 28px; margin-top: 18px; flex-wrap: wrap; }
-  .stat { display: flex; align-items: baseline; gap: 8px; }
-  .stat .num { font-size: 28px; font-weight: 700; }
-  .stat .lbl { font-size: 12px; opacity: .85; text-transform: uppercase; letter-spacing: .08em; }
-  .stat.danger { background: rgba(220,38,38,.92); padding: 8px 14px; border-radius: 10px; }
+  /* Stat strip */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: var(--shadow-sm);
+  }
+  .stat .lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--ink); margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .stat .sub { font-size: 11px; color: var(--muted-2); margin-top: 2px; }
+  @media (max-width: 1100px) { .stats { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 600px)  { .stats { grid-template-columns: repeat(2, 1fr); } }
 
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-  .bucket { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow); }
-  .bucket .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
-  .bucket h3 { margin: 0; font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-  .bucket .count { font-size: 11px; color: var(--muted); }
-  .bucket .desc { font-size: 13px; color: var(--muted); margin: 6px 0 12px 0; line-height: 1.45; }
-  .entry { border-top: 1px solid var(--border); padding: 10px 0; font-size: 13px; }
-  .entry .title { font-weight: 600; color: var(--ink); }
-  .entry .summary { color: var(--slate); margin-top: 3px; line-height: 1.45; }
-  .entry .meta { display: flex; gap: 8px; align-items: center; margin-top: 6px; flex-wrap: wrap; }
-  .badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; text-transform: uppercase; letter-spacing: .04em; }
+  /* Filter bar */
+  .filters {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow-sm);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .filter-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .filter-row label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; min-width: 64px; }
+  .chip {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--ink-soft);
+    padding: 5px 11px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    transition: background .12s, border-color .12s, color .12s;
+  }
+  .chip:hover { border-color: var(--brand); }
+  .chip.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+  .chip .count { opacity: .65; margin-left: 4px; font-variant-numeric: tabular-nums; font-weight: 400; }
+  .chip.active .count { opacity: .9; }
+
+  .search {
+    flex: 1 1 220px; max-width: 360px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    background: #fafbfd;
+  }
+  .search:focus { outline: 2px solid var(--brand-soft); border-color: var(--brand); background: #fff; }
+  .clear-btn {
+    background: transparent; border: 1px solid transparent;
+    color: var(--muted); cursor: pointer; font-size: 12px;
+    padding: 4px 10px; border-radius: 6px;
+  }
+  .clear-btn:hover { background: var(--slate-soft); color: var(--ink); }
+
+  /* Table */
+  .table-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .table-meta {
+    display: flex; align-items: baseline; gap: 12px;
+    padding: 12px 18px; border-bottom: 1px solid var(--border);
+    font-size: 12.5px; color: var(--muted);
+  }
+  .table-meta strong { color: var(--ink); font-weight: 600; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--slate-soft);
+    color: var(--slate);
+    font-weight: 600;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    border-bottom: 1px solid var(--border-strong);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  thead th .sort-arrow { color: var(--muted-2); margin-left: 4px; font-size: 11px; }
+  thead th.sorted-asc .sort-arrow,
+  thead th.sorted-desc .sort-arrow { color: var(--brand); }
+  tbody td { padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody tr:hover { background: #fafbfd; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  td.country { white-space: nowrap; font-weight: 600; }
+  td.country .iso { color: var(--muted); font-weight: 400; font-size: 11px; margin-left: 6px; font-variant-numeric: tabular-nums; }
+  td.region { color: var(--slate); font-size: 12px; white-space: nowrap; }
+  td.job { white-space: nowrap; color: var(--ink-soft); }
+  td.title { font-weight: 500; }
+  td.title .summary { color: var(--muted); font-weight: 400; font-size: 12.5px; margin-top: 3px; line-height: 1.45; }
+  td.eff { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--slate); }
+  td.source a { font-size: 11.5px; }
+
+  .badge {
+    font-size: 10.5px; font-weight: 700;
+    padding: 3px 9px; border-radius: 999px;
+    text-transform: uppercase; letter-spacing: .04em;
+    display: inline-block; white-space: nowrap;
+  }
   .badge.live { background: var(--green-soft); color: var(--green); }
   .badge.upcoming { background: var(--amber-soft); color: var(--amber); }
   .badge.in_progress { background: var(--brand-soft); color: var(--brand); }
   .badge.monitoring { background: var(--slate-soft); color: var(--slate); }
   .badge.repealed { background: var(--red-soft); color: var(--red); }
-  .meta .eff { font-size: 11px; color: var(--muted); }
-  .meta a { font-size: 11px; color: var(--brand); text-decoration: none; }
-  .meta a:hover { text-decoration: underline; }
-  .empty { color: var(--muted); font-size: 13px; font-style: italic; padding: 8px 0; }
 
-  .news-panel { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow); margin-bottom: 18px; }
-  .news-panel h2 { margin: 0 0 12px 0; font-size: 18px; }
-  .news-panel .row { padding: 10px 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: 90px 1fr auto; gap: 12px; align-items: baseline; }
-  .news-panel .country-tag { font-size: 11px; font-weight: 700; color: var(--brand); }
-  .news-panel .title { font-size: 14px; font-weight: 600; }
-  .news-panel .summary { font-size: 13px; color: var(--slate); margin-top: 3px; }
+  .empty-state {
+    padding: 64px 20px; text-align: center;
+    color: var(--muted); font-size: 14px;
+  }
+  .empty-state h3 { margin: 0 0 6px 0; color: var(--ink); }
 
-  .region-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  .region-table th, .region-table td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; }
-  .region-table th { font-weight: 600; color: var(--slate); background: var(--slate-soft); }
-  .region-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .err {
+    background: var(--red-soft); border: 1px solid var(--red);
+    color: var(--red); padding: 10px 14px; border-radius: 10px; font-size: 13px;
+    margin-bottom: 14px;
+  }
 
-  .footer { color: var(--muted); font-size: 12px; text-align: center; margin: 24px 0 8px 0; }
-  .hidden { display: none !important; }
-  .err { background: var(--red-soft); border: 1px solid var(--red); color: var(--red); padding: 10px 14px; border-radius: 10px; font-size: 13px; }
+  /* Footer */
+  .footer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 28px; }
+
+  /* Compact mode for small screens */
+  @media (max-width: 900px) {
+    .wrap { padding: 16px; }
+    thead th, tbody td { padding: 8px 10px; }
+    td.region, td.eff { display: none; }
+    th.region, th.eff { display: none; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <div class="topbar">
-    <h1>Regulatory Tracker</h1>
-    <span class="sub" id="sub-line">Loading…</span>
-    <div class="tabs">
-      <button class="tab active" data-view="country">Country Overview</button>
-      <button class="tab" data-view="whats-new">What's New</button>
-      <button class="tab" data-view="regions">Regions</button>
+<div class="topbar">
+  <h1>Regulatory Tracker</h1>
+  <span class="sub" id="sub-line">Loading…</span>
+  <div class="right">
+    <span><span class="pulse"></span>&nbsp; <span id="last-build">syncing</span></span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div id="error-zone"></div>
+
+  <div class="stats" id="stats">
+    <div class="stat"><div class="lbl">Countries</div><div class="num" id="s-countries">—</div><div class="sub">EMEA · APAC · LATAM · NA</div></div>
+    <div class="stat"><div class="lbl">Regulations</div><div class="num" id="s-regs">—</div><div class="sub">across 6 jobs</div></div>
+    <div class="stat"><div class="lbl">Live mandates</div><div class="num" id="s-live">—</div><div class="sub">in force today</div></div>
+    <div class="stat"><div class="lbl">Upcoming</div><div class="num" id="s-up">—</div><div class="sub">future effective dates</div></div>
+    <div class="stat"><div class="lbl">In progress</div><div class="num" id="s-ip">—</div><div class="sub">phased rollouts</div></div>
+    <div class="stat"><div class="lbl">Monitoring</div><div class="num" id="s-mon">—</div><div class="sub">consultations / drafts</div></div>
+  </div>
+
+  <div class="filters">
+    <div class="filter-row">
+      <label>Region</label>
+      <div id="f-region" class="chips"></div>
+    </div>
+    <div class="filter-row">
+      <label>Job</label>
+      <div id="f-job" class="chips"></div>
+    </div>
+    <div class="filter-row">
+      <label>Status</label>
+      <div id="f-status" class="chips"></div>
+    </div>
+    <div class="filter-row">
+      <input id="search" class="search" type="search" placeholder="Search title, summary, country…" />
+      <button class="clear-btn" id="clear-filters">Clear all filters</button>
     </div>
   </div>
 
-  <section id="view-country">
-    <div class="selector">
-      <label for="country-search">Select Country</label>
-      <input id="country-search" type="search" placeholder="Search countries…" />
-      <div class="pills" id="country-pills"></div>
+  <div class="table-wrap">
+    <div class="table-meta">
+      <strong id="result-count">0</strong> results
+      <span id="filter-summary"></span>
     </div>
-
-    <div class="hero">
-      <div class="eyebrow" id="hero-eyebrow">Loading…</div>
-      <h2 id="hero-title">—</h2>
-      <p id="hero-sub">Click any bucket to see the regulations driving compliance work in this market.</p>
-      <div class="stats">
-        <div class="stat"><span class="num" id="stat-live">0</span><span class="lbl">Live mandates</span></div>
-        <div class="stat"><span class="num" id="stat-upcoming">0</span><span class="lbl">Upcoming</span></div>
-        <div class="stat"><span class="num" id="stat-monitor">0</span><span class="lbl">Monitoring</span></div>
-        <div class="stat danger"><span class="num" id="stat-total">0</span><span class="lbl">Total tracked</span></div>
-      </div>
+    <table id="t">
+      <thead>
+        <tr>
+          <th data-key="country">Country <span class="sort-arrow"></span></th>
+          <th data-key="region" class="region">Region <span class="sort-arrow"></span></th>
+          <th data-key="job">Compliance Job <span class="sort-arrow"></span></th>
+          <th data-key="title">Regulation <span class="sort-arrow"></span></th>
+          <th data-key="status">Status <span class="sort-arrow"></span></th>
+          <th data-key="eff" class="eff">Effective <span class="sort-arrow"></span></th>
+          <th data-key="source">Source</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div id="empty-state" class="empty-state" style="display:none">
+      <h3>Nothing matches your filters</h3>
+      <div>Try clearing some filters or broadening the search.</div>
     </div>
-
-    <div class="grid" id="bucket-grid"></div>
-  </section>
-
-  <section id="view-whats-new" class="hidden">
-    <div class="news-panel">
-      <h2>This week — new regulations</h2>
-      <div id="news-new"></div>
-    </div>
-    <div class="news-panel">
-      <h2>Updated entries</h2>
-      <div id="news-updated"></div>
-    </div>
-  </section>
-
-  <section id="view-regions" class="hidden">
-    <div class="news-panel">
-      <h2>Coverage by region</h2>
-      <table class="region-table" id="region-table"></table>
-    </div>
-  </section>
+  </div>
 
   <div class="footer" id="footer-line">Loading…</div>
 </div>
 
 <script>
-const PRIORITY_ISO = ["GB","DE","FR","ES","IT","CA","MX","BR","IN","AU","SG","ZA"];
-const REGION_ORDER = ["EMEA","APAC","LATAM","NORTH_AMERICA"];
 const REGION_LABEL = { EMEA: "EMEA", APAC: "APAC", LATAM: "LATAM", NORTH_AMERICA: "North America" };
-const STATUS_ORDER = ["live","upcoming","in_progress","monitoring","repealed"];
-const BUCKET_ICONS = { tax_filing: "📑", vat_gst: "🧾", e_invoicing: "📨", payroll: "👥", local_gaap: "📊", banking_payments: "🏦" };
+const STATUS_LABEL = { live: "Live", upcoming: "Upcoming", in_progress: "In progress", monitoring: "Monitoring", repealed: "Repealed" };
+const STATUS_ORDER = ["live", "upcoming", "in_progress", "monitoring", "repealed"];
 
-let DATA = null, SELECTED = "GB";
+let DATA = null;
+let ROWS = [];
+let FILTERS = { region: new Set(), job: new Set(), status: new Set(), q: "" };
+let SORT = { key: "country", dir: "asc" };
 
 async function boot() {
   try {
@@ -154,126 +286,241 @@ async function boot() {
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     DATA = await resp.json();
   } catch (e) {
-    document.querySelector(".wrap").insertAdjacentHTML("afterbegin",
-      `<div class="err">Couldn't load data.json — make sure the file is published next to index.html. (${e.message})</div>`);
+    document.getElementById("error-zone").innerHTML =
+      `<div class="err">Couldn't load <code>data.json</code> — make sure the file is published next to <code>index.html</code>. (${e.message})</div>`;
     return;
   }
-  renderPills(); renderRegions(); renderWhatsNew(); bindTabs(); bindSearch();
-  selectCountry(SELECTED); updateFooter();
+  flatten();
+  renderStats();
+  renderFilters();
+  bindEvents();
+  renderTable();
+  renderHeader();
 }
 
-function bindTabs() {
-  document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
-    document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
-    t.classList.add("active");
-    const view = t.dataset.view;
-    ["country","whats-new","regions"].forEach(v => document.getElementById("view-" + v).classList.toggle("hidden", v !== view));
-  }));
-}
-function bindSearch() {
-  const input = document.getElementById("country-search");
-  input.addEventListener("input", () => {
-    const q = input.value.trim().toLowerCase();
-    document.querySelectorAll("#country-pills .pill").forEach(p => {
-      const match = !q || p.textContent.toLowerCase().includes(q) || p.dataset.iso.toLowerCase() === q;
-      p.style.display = match ? "" : "none";
+function flatten() {
+  ROWS = [];
+  const jobName = {};
+  DATA.compliance_jobs.forEach(j => jobName[j.id] = j.name);
+  DATA.countries.forEach(c => {
+    Object.entries(c.compliance || {}).forEach(([jobId, items]) => {
+      items.forEach(e => {
+        ROWS.push({
+          country: c.name, iso: c.iso, region: c.region, currency: c.currency,
+          job: jobName[jobId] || jobId, jobId,
+          title: e.title || "", summary: e.summary || "",
+          status: e.status || "monitoring",
+          eff: e.effective_date || "TBD",
+          source: e.source || "",
+          source_type: e.source_type || "",
+          last_updated: e.last_updated || c.last_synced || ""
+        });
+      });
     });
   });
 }
-function renderPills() {
-  const wrap = document.getElementById("country-pills"); wrap.innerHTML = "";
-  const priority = [], rest = [];
-  DATA.countries.forEach(c => (PRIORITY_ISO.includes(c.iso) ? priority : rest).push(c));
-  priority.sort((a,b) => PRIORITY_ISO.indexOf(a.iso) - PRIORITY_ISO.indexOf(b.iso));
-  rest.sort((a,b) => a.name.localeCompare(b.name));
-  [...priority, ...rest].forEach(c => {
-    const btn = document.createElement("button");
-    btn.className = "pill" + (c.iso === SELECTED ? " active" : "");
-    btn.dataset.iso = c.iso; btn.textContent = c.name;
-    btn.addEventListener("click", () => selectCountry(c.iso));
-    wrap.appendChild(btn);
+
+function renderStats() {
+  const counts = { live:0, upcoming:0, in_progress:0, monitoring:0, repealed:0 };
+  ROWS.forEach(r => counts[r.status] = (counts[r.status] || 0) + 1);
+  document.getElementById("s-countries").textContent = DATA.countries.length;
+  document.getElementById("s-regs").textContent = ROWS.length;
+  document.getElementById("s-live").textContent = counts.live;
+  document.getElementById("s-up").textContent = counts.upcoming;
+  document.getElementById("s-ip").textContent = counts.in_progress;
+  document.getElementById("s-mon").textContent = counts.monitoring;
+}
+
+function renderFilters() {
+  // Region chips
+  const regionEl = document.getElementById("f-region");
+  const regionCounts = {};
+  ROWS.forEach(r => regionCounts[r.region] = (regionCounts[r.region] || 0) + 1);
+  ["EMEA","APAC","LATAM","NORTH_AMERICA"].forEach(rg => {
+    if (!regionCounts[rg]) return;
+    regionEl.appendChild(makeChip(REGION_LABEL[rg], regionCounts[rg], () => toggleSet(FILTERS.region, rg)));
+  });
+
+  // Job chips
+  const jobEl = document.getElementById("f-job");
+  DATA.compliance_jobs.forEach(j => {
+    const n = ROWS.filter(r => r.jobId === j.id).length;
+    jobEl.appendChild(makeChip(j.name, n, () => toggleSet(FILTERS.job, j.id), { jobId: j.id }));
+  });
+
+  // Status chips
+  const statusEl = document.getElementById("f-status");
+  STATUS_ORDER.forEach(s => {
+    const n = ROWS.filter(r => r.status === s).length;
+    if (!n) return;
+    statusEl.appendChild(makeChip(STATUS_LABEL[s], n, () => toggleSet(FILTERS.status, s), { status: s }));
   });
 }
-function selectCountry(iso) {
-  SELECTED = iso;
-  document.querySelectorAll("#country-pills .pill").forEach(p => p.classList.toggle("active", p.dataset.iso === iso));
-  const c = DATA.countries.find(x => x.iso === iso); if (!c) return;
-  document.getElementById("hero-eyebrow").textContent = `${REGION_LABEL[c.region] || c.region} · ${monthName()}`;
-  document.getElementById("hero-title").textContent = `${c.name} — ${countTotal(c)} tracked regulations across 6 compliance jobs`;
-  document.getElementById("hero-sub").textContent = `Currency ${c.currency} · synced ${shortDate(c.last_synced)}`;
-  const counts = countByStatus(c);
-  document.getElementById("stat-live").textContent = counts.live || 0;
-  document.getElementById("stat-upcoming").textContent = counts.upcoming || 0;
-  document.getElementById("stat-monitor").textContent = counts.monitoring || 0;
-  document.getElementById("stat-total").textContent = countTotal(c);
-  const grid = document.getElementById("bucket-grid"); grid.innerHTML = "";
-  DATA.compliance_jobs.forEach(job => {
-    const items = (c.compliance && c.compliance[job.id]) || [];
-    items.sort((a,b) => STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status));
-    const card = document.createElement("div"); card.className = "bucket";
-    card.innerHTML = `
-      <div class="head"><h3>${BUCKET_ICONS[job.id] || "•"} ${escapeHtml(job.name)}</h3><span class="count">${items.length} item${items.length===1?"":"s"}</span></div>
-      <div class="desc">${escapeHtml(job.description)}</div>
-      <div class="entries"></div>`;
-    const entries = card.querySelector(".entries");
-    if (!items.length) entries.innerHTML = `<div class="empty">No regulations seeded yet — weekly job will populate.</div>`;
-    else items.forEach(e => {
-      const row = document.createElement("div"); row.className = "entry";
-      row.innerHTML = `
-        <div class="title">${escapeHtml(e.title)}</div>
-        <div class="summary">${escapeHtml(e.summary || "")}</div>
-        <div class="meta">
-          <span class="badge ${e.status}">${e.status.replace("_"," ")}</span>
-          <span class="eff">eff. ${escapeHtml(e.effective_date || "TBD")}</span>
-          ${e.source ? `<a href="${escapeAttr(e.source)}" target="_blank" rel="noopener">source ↗</a>` : ""}
-        </div>`;
-      entries.appendChild(row);
-    });
-    grid.appendChild(card);
+
+function makeChip(label, count, onClick, extra={}) {
+  const btn = document.createElement("button");
+  btn.className = "chip";
+  btn.innerHTML = `${label}<span class="count">${count}</span>`;
+  Object.entries(extra).forEach(([k, v]) => btn.dataset[k] = v);
+  btn.addEventListener("click", () => { onClick(); refreshChipStates(); renderTable(); });
+  return btn;
+}
+
+function toggleSet(set, v) {
+  if (set.has(v)) set.delete(v); else set.add(v);
+}
+
+function refreshChipStates() {
+  document.querySelectorAll("#f-region .chip").forEach(c => {
+    const region = invertRegionLabel(c.firstChild.textContent);
+    c.classList.toggle("active", FILTERS.region.has(region));
+  });
+  document.querySelectorAll("#f-job .chip").forEach(c => {
+    c.classList.toggle("active", FILTERS.job.has(c.dataset.jobId));
+  });
+  document.querySelectorAll("#f-status .chip").forEach(c => {
+    c.classList.toggle("active", FILTERS.status.has(c.dataset.status));
   });
 }
-function renderWhatsNew() {
-  const diff = DATA.latest_diff || { new: [], updated: [] };
-  const wrap = (host, items) => {
-    const el = document.getElementById(host);
-    if (!items || !items.length) { el.innerHTML = `<div class="empty">Nothing this week.</div>`; return; }
-    el.innerHTML = "";
-    items.forEach(it => {
-      const row = document.createElement("div"); row.className = "row";
-      row.innerHTML = `
-        <div class="country-tag">${escapeHtml(it.country)} · ${escapeHtml(it.iso)}</div>
-        <div><div class="title">${escapeHtml(it.title)}</div><div class="summary">${escapeHtml(it.summary || "")}</div></div>
-        <span class="badge ${it.status||"monitoring"}">${(it.status||"").replace("_"," ")}</span>`;
-      el.appendChild(row);
-    });
-  };
-  wrap("news-new", diff.new); wrap("news-updated", diff.updated);
+
+function invertRegionLabel(label) {
+  return Object.keys(REGION_LABEL).find(k => REGION_LABEL[k] === label) || label;
 }
-function renderRegions() {
-  const t = document.getElementById("region-table");
-  t.innerHTML = `<thead><tr><th>Region</th><th>Country</th><th class="num">Live</th><th class="num">Upcoming</th><th class="num">Monitoring</th><th class="num">Total</th><th>Last synced</th></tr></thead><tbody></tbody>`;
-  const tbody = t.querySelector("tbody");
-  REGION_ORDER.forEach(region => {
-    DATA.countries.filter(c => c.region === region).sort((a,b) => a.name.localeCompare(b.name)).forEach(c => {
-      const counts = countByStatus(c);
-      const tr = document.createElement("tr");
-      tr.innerHTML = `<td>${REGION_LABEL[region]}</td><td><a href="#" data-iso="${c.iso}">${escapeHtml(c.name)}</a></td><td class="num">${counts.live||0}</td><td class="num">${counts.upcoming||0}</td><td class="num">${counts.monitoring||0}</td><td class="num">${countTotal(c)}</td><td>${shortDate(c.last_synced)}</td>`;
-      tr.querySelector("a").addEventListener("click", ev => { ev.preventDefault(); document.querySelector('.tab[data-view="country"]').click(); selectCountry(c.iso); window.scrollTo({top:0,behavior:"smooth"}); });
-      tbody.appendChild(tr);
+
+function bindEvents() {
+  document.getElementById("search").addEventListener("input", (e) => {
+    FILTERS.q = e.target.value.trim().toLowerCase();
+    renderTable();
+  });
+  document.getElementById("clear-filters").addEventListener("click", () => {
+    FILTERS.region.clear(); FILTERS.job.clear(); FILTERS.status.clear(); FILTERS.q = "";
+    document.getElementById("search").value = "";
+    refreshChipStates(); renderTable();
+  });
+  document.querySelectorAll("thead th").forEach(th => {
+    if (!th.dataset.key) return;
+    th.addEventListener("click", () => {
+      if (SORT.key === th.dataset.key) SORT.dir = SORT.dir === "asc" ? "desc" : "asc";
+      else { SORT.key = th.dataset.key; SORT.dir = "asc"; }
+      renderTable();
     });
   });
 }
-function updateFooter() {
+
+function applyFilters(rows) {
+  return rows.filter(r => {
+    if (FILTERS.region.size && !FILTERS.region.has(r.region)) return false;
+    if (FILTERS.job.size && !FILTERS.job.has(r.jobId)) return false;
+    if (FILTERS.status.size && !FILTERS.status.has(r.status)) return false;
+    if (FILTERS.q) {
+      const hay = (r.country + " " + r.iso + " " + r.title + " " + r.summary + " " + r.job).toLowerCase();
+      if (!hay.includes(FILTERS.q)) return false;
+    }
+    return true;
+  });
+}
+
+function compareRows(a, b) {
+  const k = SORT.key;
+  let av, bv;
+  switch (k) {
+    case "country": av = a.country; bv = b.country; break;
+    case "region":  av = a.region;  bv = b.region;  break;
+    case "job":     av = a.job;     bv = b.job;     break;
+    case "title":   av = a.title;   bv = b.title;   break;
+    case "status":  av = STATUS_ORDER.indexOf(a.status); bv = STATUS_ORDER.indexOf(b.status); break;
+    case "eff":     av = effSortVal(a.eff); bv = effSortVal(b.eff); break;
+    default: av = ""; bv = "";
+  }
+  if (av < bv) return SORT.dir === "asc" ? -1 : 1;
+  if (av > bv) return SORT.dir === "asc" ?  1 : -1;
+  return 0;
+}
+
+function effSortVal(s) {
+  if (!s || s === "TBD" || s === "rolling") return "9999-99-99";
+  // YYYY-MM-DD or YYYY-Qn or YYYY-MM
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+  if (/^\d{4}-Q[1-4]$/.test(s)) {
+    const [y, q] = s.split("-Q");
+    return `${y}-${["03","06","09","12"][parseInt(q,10)-1]}-31`;
+  }
+  if (/^\d{4}-\d{2}$/.test(s)) return s + "-01";
+  return s;
+}
+
+function renderTable() {
+  const filtered = applyFilters(ROWS).sort(compareRows);
+  document.getElementById("result-count").textContent = filtered.length.toLocaleString();
+  document.getElementById("filter-summary").textContent = filterSummary();
+
+  const tbody = document.getElementById("tbody");
+  tbody.innerHTML = "";
+  if (!filtered.length) {
+    document.getElementById("empty-state").style.display = "";
+    return;
+  }
+  document.getElementById("empty-state").style.display = "none";
+
+  // build rows
+  const frag = document.createDocumentFragment();
+  filtered.forEach(r => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td class="country">${escapeHtml(r.country)}<span class="iso">${r.iso}</span></td>
+      <td class="region">${REGION_LABEL[r.region] || r.region}</td>
+      <td class="job">${escapeHtml(r.job)}</td>
+      <td class="title">${escapeHtml(r.title)}<div class="summary">${escapeHtml(r.summary)}</div></td>
+      <td class="status"><span class="badge ${r.status}">${STATUS_LABEL[r.status] || r.status}</span></td>
+      <td class="eff">${escapeHtml(r.eff)}</td>
+      <td class="source">${r.source ? `<a href="${escapeAttr(r.source)}" target="_blank" rel="noopener">view ↗</a>` : "—"}</td>
+    `;
+    frag.appendChild(tr);
+  });
+  tbody.appendChild(frag);
+
+  // sort arrows
+  document.querySelectorAll("thead th").forEach(th => {
+    th.classList.remove("sorted-asc", "sorted-desc");
+    const arrow = th.querySelector(".sort-arrow"); if (arrow) arrow.textContent = "";
+    if (th.dataset.key === SORT.key) {
+      th.classList.add(SORT.dir === "asc" ? "sorted-asc" : "sorted-desc");
+      if (arrow) arrow.textContent = SORT.dir === "asc" ? "▲" : "▼";
+    }
+  });
+}
+
+function filterSummary() {
+  const parts = [];
+  if (FILTERS.region.size) parts.push([...FILTERS.region].map(r => REGION_LABEL[r] || r).join(", "));
+  if (FILTERS.job.size) {
+    const names = DATA.compliance_jobs.filter(j => FILTERS.job.has(j.id)).map(j => j.name);
+    parts.push(names.join(", "));
+  }
+  if (FILTERS.status.size) parts.push([...FILTERS.status].map(s => STATUS_LABEL[s] || s).join(", "));
+  if (FILTERS.q) parts.push(`“${FILTERS.q}”`);
+  return parts.length ? `· ${parts.join(" · ")}` : "";
+}
+
+function renderHeader() {
   const generated = DATA.generated_at ? new Date(DATA.generated_at) : null;
-  document.getElementById("footer-line").textContent = `Last build ${generated ? generated.toUTCString() : "—"} · ${DATA.countries.length} countries · ${DATA.compliance_jobs.length} compliance jobs`;
-  document.getElementById("sub-line").textContent = `Compliance database · ${DATA.countries.length} countries · ${DATA.compliance_jobs.length} jobs`;
+  document.getElementById("last-build").textContent = generated
+    ? `last sync ${shortDate(DATA.generated_at)}` : "no sync yet";
+  document.getElementById("sub-line").textContent =
+    `${DATA.countries.length} countries · ${DATA.compliance_jobs.length} compliance jobs · ${ROWS.length} regulations tracked`;
+  document.getElementById("footer-line").textContent =
+    `Updated weekly by regulatory-tracker-friday-digest · last build ${generated ? generated.toUTCString() : "—"}`;
 }
-function countByStatus(c) { const o = {}; Object.values(c.compliance||{}).forEach(a => a.forEach(e => o[e.status] = (o[e.status]||0)+1)); return o; }
-function countTotal(c) { return Object.values(c.compliance||{}).reduce((s,a) => s+a.length, 0); }
-function shortDate(iso) { if(!iso) return "—"; try { return new Date(iso).toISOString().slice(0,10); } catch(_){ return iso; } }
-function monthName() { return new Date().toLocaleString("en", { month: "long", year: "numeric" }).toUpperCase(); }
-function escapeHtml(s) { return String(s||"").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]); }
+
+function shortDate(iso) {
+  if (!iso) return "—";
+  try { return new Date(iso).toISOString().slice(0,10); } catch { return iso; }
+}
+function escapeHtml(s) {
+  return String(s||"").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]);
+}
 function escapeAttr(s) { return escapeHtml(s); }
+
 boot();
 </script>
 </body>
