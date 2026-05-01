@@ -1,0 +1,28 @@
+{
+  "iso": "NZ",
+  "name": "New Zealand",
+  "region": "APAC",
+  "currency": "NZD",
+  "language": "en",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "NZ-PEPPOL-GOV",
+        "title": "Government e-invoicing capability",
+        "summary": "All government agencies must be able to receive Peppol e-invoices.",
+        "status": "live",
+        "effective_date": "2022-03-31",
+        "source": "https://www.einvoicing.govt.nz/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

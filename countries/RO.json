@@ -1,0 +1,28 @@
+{
+  "iso": "RO",
+  "name": "Romania",
+  "region": "EMEA",
+  "currency": "RON",
+  "language": "ro",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "RO-EFACTURA-2024",
+        "title": "RO e-Factura B2B mandate",
+        "summary": "Mandatory B2B e-invoicing through RO e-Factura platform since July 2024.",
+        "status": "live",
+        "effective_date": "2024-07-01",
+        "source": "https://www.anaf.ro/anaf/internet/ANAF/servicii_online/e-factura/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

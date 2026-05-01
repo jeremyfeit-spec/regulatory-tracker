@@ -1,0 +1,28 @@
+{
+  "iso": "ID",
+  "name": "Indonesia",
+  "region": "APAC",
+  "currency": "IDR",
+  "language": "id",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "ID-EFAKTUR",
+        "title": "e-Faktur VAT invoice system",
+        "summary": "All VAT-registered businesses issue tax invoices via DJP e-Faktur.",
+        "status": "live",
+        "effective_date": "2016-07-01",
+        "source": "https://efaktur.pajak.go.id/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

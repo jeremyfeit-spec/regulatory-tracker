@@ -1,0 +1,28 @@
+{
+  "iso": "SG",
+  "name": "Singapore",
+  "region": "APAC",
+  "currency": "SGD",
+  "language": "en",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "SG-INVOICENOW-GST-2025",
+        "title": "InvoiceNow mandatory for GST-registered businesses",
+        "summary": "Phased rollout: voluntary May 2025; new GST registrants Nov 2025; all newly incorporated GST-registered Apr 2026.",
+        "status": "in_progress",
+        "effective_date": "2025-11-01",
+        "source": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-invoicenow-requirement",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

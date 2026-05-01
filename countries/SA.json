@@ -1,0 +1,28 @@
+{
+  "iso": "SA",
+  "name": "Saudi Arabia",
+  "region": "EMEA",
+  "currency": "SAR",
+  "language": "ar",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "SA-FATOORA-W2",
+        "title": "ZATCA FATOORA Phase 2 integration waves",
+        "summary": "Continuing waves of taxpayer integration with FATOORA platform.",
+        "status": "in_progress",
+        "effective_date": "rolling",
+        "source": "https://zatca.gov.sa/en/E-Invoicing/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "iso": "ZA",
+  "name": "South Africa",
+  "region": "EMEA",
+  "currency": "ZAR",
+  "language": "en",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [
+      {
+        "id": "ZA-SARS-EFILING",
+        "title": "SARS eFiling continues mandatory for VAT/PAYE/CIT",
+        "summary": "All registered businesses file via SARS eFiling.",
+        "status": "live",
+        "effective_date": "2006-01-01",
+        "source": "https://www.sars.gov.za/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "vat_gst": [],
+    "e_invoicing": [],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

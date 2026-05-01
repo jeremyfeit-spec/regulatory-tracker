@@ -1,0 +1,40 @@
+{
+  "iso": "MX",
+  "name": "Mexico",
+  "region": "LATAM",
+  "currency": "MXN",
+  "language": "es",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "MX-CFDI-40",
+        "title": "CFDI 4.0 mandatory",
+        "summary": "All electronic invoices in CFDI 4.0; Carta Porte 3.0 supplement for transport.",
+        "status": "live",
+        "effective_date": "2023-04-01",
+        "source": "https://www.sat.gob.mx/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "MX-NOMINA-CFDI",
+        "title": "Nómina CFDI digital payroll receipts",
+        "summary": "Employers must issue payroll CFDI receipts to all employees stamped through PAC.",
+        "status": "live",
+        "effective_date": "2014-04-01",
+        "source": "https://www.sat.gob.mx/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

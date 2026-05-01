@@ -1,0 +1,52 @@
+{
+  "iso": "CA",
+  "name": "Canada",
+  "region": "NORTH_AMERICA",
+  "currency": "CAD",
+  "language": "en",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [
+      {
+        "id": "CA-T2-CORPORATE",
+        "title": "T2 corporate tax e-filing",
+        "summary": "Mandatory electronic filing of T2 returns for revenues > $1M.",
+        "status": "live",
+        "effective_date": "2014-01-01",
+        "source": "https://www.canada.ca/en/revenue-agency.html",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "CA-GSTHST-DIGITAL",
+        "title": "GST/HST digital economy rules",
+        "summary": "Non-resident vendors and digital platforms must register and remit GST/HST since July 2021.",
+        "status": "live",
+        "effective_date": "2021-07-01",
+        "source": "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy-gsthst.html",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "e_invoicing": [],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": [
+      {
+        "id": "CA-RTR-2026",
+        "title": "Real-Time Rail (RTR)",
+        "summary": "Payments Canada Real-Time Rail go-live target window late 2026.",
+        "status": "monitoring",
+        "effective_date": "2026-Q4",
+        "source": "https://www.payments.ca/our-systems/our-modernization-program/real-time-rail",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ]
+  }
+}

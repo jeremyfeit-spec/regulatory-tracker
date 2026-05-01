@@ -1,0 +1,28 @@
+{
+  "iso": "PE",
+  "name": "Peru",
+  "region": "LATAM",
+  "currency": "PEN",
+  "language": "es",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "PE-SEE",
+        "title": "Sistema de Emisión Electrónica (SEE)",
+        "summary": "All registered taxpayers issue electronic invoices through SUNAT SEE.",
+        "status": "live",
+        "effective_date": "2018-01-01",
+        "source": "https://www.sunat.gob.pe/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

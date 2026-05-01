@@ -1,0 +1,28 @@
+{
+  "iso": "AE",
+  "name": "United Arab Emirates",
+  "region": "EMEA",
+  "currency": "AED",
+  "language": "ar",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "AE-EINV-2026",
+        "title": "UAE e-invoicing programme",
+        "summary": "Phase 1 of UAE e-invoicing scheduled for July 2026 — Peppol-based 5-corner model.",
+        "status": "upcoming",
+        "effective_date": "2026-07-01",
+        "source": "https://tax.gov.ae/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "iso": "ES",
+  "name": "Spain",
+  "region": "EMEA",
+  "currency": "EUR",
+  "language": "es",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "ES-VERIFACTU-2026",
+        "title": "Verifactu (Royal Decree 1007/2023)",
+        "summary": "Certified billing software requirements; voluntary 2025, mandatory 2026.",
+        "status": "upcoming",
+        "effective_date": "2026-01-01",
+        "source": "https://www.agenciatributaria.es/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      },
+      {
+        "id": "ES-CREALE-B2B-2026",
+        "title": "Crea y Crece B2B e-invoicing",
+        "summary": "B2B e-invoicing mandate under Crea y Crece law; phased rollout pending technical regulation.",
+        "status": "upcoming",
+        "effective_date": "TBD",
+        "source": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-15818",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "iso": "LU",
+  "name": "Luxembourg",
+  "region": "EMEA",
+  "currency": "EUR",
+  "language": "fr",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

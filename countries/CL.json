@@ -1,0 +1,28 @@
+{
+  "iso": "CL",
+  "name": "Chile",
+  "region": "LATAM",
+  "currency": "CLP",
+  "language": "es",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "CL-DTE",
+        "title": "Documento Tributario Electrónico (DTE)",
+        "summary": "Universal e-invoicing via SII; all taxpayers issue DTEs.",
+        "status": "live",
+        "effective_date": "2018-02-01",
+        "source": "https://www.sii.cl/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

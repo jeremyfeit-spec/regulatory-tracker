@@ -1,0 +1,28 @@
+{
+  "iso": "MY",
+  "name": "Malaysia",
+  "region": "APAC",
+  "currency": "MYR",
+  "language": "en",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "MY-EINV-2024",
+        "title": "Malaysia e-invoicing (LHDN MyInvois)",
+        "summary": "Phased rollout by turnover; large taxpayers Aug 2024; full mandate by 2025-2026.",
+        "status": "in_progress",
+        "effective_date": "2024-08-01",
+        "source": "https://www.hasil.gov.my/en/e-invoice/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

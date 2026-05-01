@@ -1,0 +1,40 @@
+{
+  "iso": "IN",
+  "name": "India",
+  "region": "APAC",
+  "currency": "INR",
+  "language": "en",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [
+      {
+        "id": "IN-TDS-26AS-AIS",
+        "title": "Annual Information Statement (AIS)",
+        "summary": "Income Tax Department continues expanding AIS coverage.",
+        "status": "in_progress",
+        "effective_date": "rolling",
+        "source": "https://www.incometax.gov.in/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "IN-GST-EINV-5CR",
+        "title": "GST e-invoicing threshold lowered to ₹5 Cr",
+        "summary": "B2B e-invoicing via IRP mandatory for taxpayers > ₹5 Crore (since Aug 2023).",
+        "status": "live",
+        "effective_date": "2023-08-01",
+        "source": "https://www.gst.gov.in/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "e_invoicing": [],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

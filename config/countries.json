@@ -1,0 +1,81 @@
+{
+  "regions": {
+    "EMEA": [
+      {"iso": "GB", "name": "United Kingdom", "currency": "GBP", "language": "en"},
+      {"iso": "IE", "name": "Ireland", "currency": "EUR", "language": "en"},
+      {"iso": "FR", "name": "France", "currency": "EUR", "language": "fr"},
+      {"iso": "DE", "name": "Germany", "currency": "EUR", "language": "de"},
+      {"iso": "ES", "name": "Spain", "currency": "EUR", "language": "es"},
+      {"iso": "IT", "name": "Italy", "currency": "EUR", "language": "it"},
+      {"iso": "NL", "name": "Netherlands", "currency": "EUR", "language": "nl"},
+      {"iso": "BE", "name": "Belgium", "currency": "EUR", "language": "nl"},
+      {"iso": "LU", "name": "Luxembourg", "currency": "EUR", "language": "fr"},
+      {"iso": "PT", "name": "Portugal", "currency": "EUR", "language": "pt"},
+      {"iso": "AT", "name": "Austria", "currency": "EUR", "language": "de"},
+      {"iso": "CH", "name": "Switzerland", "currency": "CHF", "language": "de"},
+      {"iso": "DK", "name": "Denmark", "currency": "DKK", "language": "da"},
+      {"iso": "SE", "name": "Sweden", "currency": "SEK", "language": "sv"},
+      {"iso": "NO", "name": "Norway", "currency": "NOK", "language": "no"},
+      {"iso": "FI", "name": "Finland", "currency": "EUR", "language": "fi"},
+      {"iso": "PL", "name": "Poland", "currency": "PLN", "language": "pl"},
+      {"iso": "CZ", "name": "Czech Republic", "currency": "CZK", "language": "cs"},
+      {"iso": "HU", "name": "Hungary", "currency": "HUF", "language": "hu"},
+      {"iso": "RO", "name": "Romania", "currency": "RON", "language": "ro"},
+      {"iso": "GR", "name": "Greece", "currency": "EUR", "language": "el"},
+      {"iso": "TR", "name": "Turkey", "currency": "TRY", "language": "tr"},
+      {"iso": "ZA", "name": "South Africa", "currency": "ZAR", "language": "en"},
+      {"iso": "AE", "name": "United Arab Emirates", "currency": "AED", "language": "ar"},
+      {"iso": "SA", "name": "Saudi Arabia", "currency": "SAR", "language": "ar"},
+      {"iso": "IL", "name": "Israel", "currency": "ILS", "language": "he"},
+      {"iso": "EG", "name": "Egypt", "currency": "EGP", "language": "ar"},
+      {"iso": "NG", "name": "Nigeria", "currency": "NGN", "language": "en"},
+      {"iso": "KE", "name": "Kenya", "currency": "KES", "language": "en"}
+    ],
+    "APAC": [
+      {"iso": "AU", "name": "Australia", "currency": "AUD", "language": "en"},
+      {"iso": "NZ", "name": "New Zealand", "currency": "NZD", "language": "en"},
+      {"iso": "IN", "name": "India", "currency": "INR", "language": "en"},
+      {"iso": "SG", "name": "Singapore", "currency": "SGD", "language": "en"},
+      {"iso": "MY", "name": "Malaysia", "currency": "MYR", "language": "en"},
+      {"iso": "ID", "name": "Indonesia", "currency": "IDR", "language": "id"},
+      {"iso": "TH", "name": "Thailand", "currency": "THB", "language": "th"},
+      {"iso": "VN", "name": "Vietnam", "currency": "VND", "language": "vi"},
+      {"iso": "PH", "name": "Philippines", "currency": "PHP", "language": "en"},
+      {"iso": "JP", "name": "Japan", "currency": "JPY", "language": "ja"},
+      {"iso": "KR", "name": "South Korea", "currency": "KRW", "language": "ko"},
+      {"iso": "CN", "name": "China", "currency": "CNY", "language": "zh"},
+      {"iso": "HK", "name": "Hong Kong", "currency": "HKD", "language": "en"},
+      {"iso": "TW", "name": "Taiwan", "currency": "TWD", "language": "zh"},
+      {"iso": "PK", "name": "Pakistan", "currency": "PKR", "language": "en"},
+      {"iso": "BD", "name": "Bangladesh", "currency": "BDT", "language": "bn"}
+    ],
+    "LATAM": [
+      {"iso": "MX", "name": "Mexico", "currency": "MXN", "language": "es"},
+      {"iso": "BR", "name": "Brazil", "currency": "BRL", "language": "pt"},
+      {"iso": "AR", "name": "Argentina", "currency": "ARS", "language": "es"},
+      {"iso": "CL", "name": "Chile", "currency": "CLP", "language": "es"},
+      {"iso": "CO", "name": "Colombia", "currency": "COP", "language": "es"},
+      {"iso": "PE", "name": "Peru", "currency": "PEN", "language": "es"},
+      {"iso": "UY", "name": "Uruguay", "currency": "UYU", "language": "es"},
+      {"iso": "EC", "name": "Ecuador", "currency": "USD", "language": "es"},
+      {"iso": "PY", "name": "Paraguay", "currency": "PYG", "language": "es"},
+      {"iso": "BO", "name": "Bolivia", "currency": "BOB", "language": "es"},
+      {"iso": "VE", "name": "Venezuela", "currency": "VES", "language": "es"},
+      {"iso": "CR", "name": "Costa Rica", "currency": "CRC", "language": "es"},
+      {"iso": "PA", "name": "Panama", "currency": "PAB", "language": "es"},
+      {"iso": "GT", "name": "Guatemala", "currency": "GTQ", "language": "es"},
+      {"iso": "DO", "name": "Dominican Republic", "currency": "DOP", "language": "es"}
+    ],
+    "NORTH_AMERICA": [
+      {"iso": "CA", "name": "Canada", "currency": "CAD", "language": "en"}
+    ]
+  },
+  "compliance_jobs": [
+    {"id": "tax_filing", "name": "Tax Filing & Returns", "description": "Income tax, corporate tax, and statutory annual filings to local tax authorities"},
+    {"id": "vat_gst", "name": "VAT/GST Compliance", "description": "Indirect tax calculation, return filing, and real-time reporting to government portals"},
+    {"id": "e_invoicing", "name": "E-Invoicing", "description": "Generating, transmitting, and receiving invoices in government-mandated digital formats"},
+    {"id": "payroll", "name": "Payroll Tax & Social Contributions", "description": "Withholding, pension/social security calculations, and employer filings"},
+    {"id": "local_gaap", "name": "Local GAAP & Statutory Reporting", "description": "Chart of accounts, financial statement formats, and regulatory filings"},
+    {"id": "banking_payments", "name": "Banking & Payments Compliance", "description": "Local bank feeds, payment rails, IBAN/SEPA, and open banking connectivity"}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "iso": "BR",
+  "name": "Brazil",
+  "region": "LATAM",
+  "currency": "BRL",
+  "language": "pt",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [
+      {
+        "id": "BR-TAX-REFORM-2026",
+        "title": "Brazil indirect tax reform (CBS/IBS)",
+        "summary": "Constitutional tax reform replaces PIS/COFINS/ICMS/ISS with CBS and IBS; phased 2026-2033.",
+        "status": "upcoming",
+        "effective_date": "2026-01-01",
+        "source": "https://www.gov.br/fazenda/pt-br/assuntos/reforma-tributaria",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "BR-NFE",
+        "title": "NF-e / NFS-e electronic invoicing",
+        "summary": "Universal NF-e for goods; new national NFS-e standard rolling out for services.",
+        "status": "live",
+        "effective_date": "2008-04-01",
+        "source": "https://www.nfe.fazenda.gov.br/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

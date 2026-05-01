@@ -1,0 +1,16 @@
+{
+  "iso": "BO",
+  "name": "Bolivia",
+  "region": "LATAM",
+  "currency": "BOB",
+  "language": "es",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

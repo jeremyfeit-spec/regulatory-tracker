@@ -1,0 +1,226 @@
+# Authoritative sources per country.
+# The weekly job iterates over each country and pulls from:
+#   1. official_sites — government tax authorities (highest authority)
+#   2. advisory_firms — global Big 4 / advisory aggregators (broad coverage)
+#   3. news_feeds — tax/regulatory news (early signal)
+#   4. web_search — fallback LLM-driven search per country/job
+
+global_advisory:
+  - {name: "PwC Worldwide Tax Summaries", url: "https://taxsummaries.pwc.com/", type: "advisory"}
+  - {name: "EY Global Tax Alerts", url: "https://www.ey.com/en_gl/tax-alerts", type: "advisory"}
+  - {name: "KPMG TaxNewsFlash", url: "https://kpmg.com/xx/en/our-insights/regulatory-insights/taxnewsflash.html", type: "advisory"}
+  - {name: "Deloitte Tax@Hand", url: "https://www.taxathand.com/", type: "advisory"}
+  - {name: "BDO Global Tax Alerts", url: "https://www.bdo.global/en-gb/insights", type: "advisory"}
+
+global_news:
+  - {name: "Bloomberg Tax", url: "https://news.bloombergtax.com/", type: "news"}
+  - {name: "Tax Notes International", url: "https://www.taxnotes.com/tax-notes-international", type: "news"}
+  - {name: "International Tax Review", url: "https://www.internationaltaxreview.com/", type: "news"}
+  - {name: "VATCalc News", url: "https://www.vatcalc.com/news/", type: "news"}
+  - {name: "Avalara VAT Live", url: "https://www.avalara.com/vatlive/en/vat-news.html", type: "news"}
+  - {name: "Sovos Regulatory Analysis", url: "https://sovos.com/regulatory-updates/", type: "news"}
+
+countries:
+  GB:
+    official:
+      - {name: "HMRC", url: "https://www.gov.uk/government/organisations/hm-revenue-customs", topics: ["tax_filing","vat_gst","payroll"]}
+      - {name: "Companies House", url: "https://www.gov.uk/government/organisations/companies-house", topics: ["local_gaap"]}
+      - {name: "FCA Open Banking", url: "https://www.openbanking.org.uk/", topics: ["banking_payments"]}
+  IE:
+    official:
+      - {name: "Revenue.ie", url: "https://www.revenue.ie/en/Home.aspx", topics: ["tax_filing","vat_gst","payroll","e_invoicing"]}
+      - {name: "CRO Ireland", url: "https://www.cro.ie/", topics: ["local_gaap"]}
+  FR:
+    official:
+      - {name: "DGFiP / impots.gouv.fr", url: "https://www.impots.gouv.fr/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+      - {name: "URSSAF", url: "https://www.urssaf.fr/", topics: ["payroll"]}
+      - {name: "Chorus Pro", url: "https://chorus-pro.gouv.fr/", topics: ["e_invoicing"]}
+  DE:
+    official:
+      - {name: "Bundeszentralamt für Steuern (BZSt)", url: "https://www.bzst.de/", topics: ["tax_filing","vat_gst"]}
+      - {name: "ELSTER", url: "https://www.elster.de/", topics: ["tax_filing","vat_gst","payroll"]}
+  ES:
+    official:
+      - {name: "Agencia Tributaria (AEAT)", url: "https://www.agenciatributaria.es/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  IT:
+    official:
+      - {name: "Agenzia delle Entrate", url: "https://www.agenziaentrate.gov.it/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+      - {name: "Sistema di Interscambio (SDI)", url: "https://www.fatturapa.gov.it/", topics: ["e_invoicing"]}
+  NL:
+    official:
+      - {name: "Belastingdienst", url: "https://www.belastingdienst.nl/", topics: ["tax_filing","vat_gst","payroll"]}
+  BE:
+    official:
+      - {name: "FPS Finance Belgium", url: "https://finance.belgium.be/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  LU:
+    official:
+      - {name: "Administration des contributions directes", url: "https://impotsdirects.public.lu/", topics: ["tax_filing"]}
+  PT:
+    official:
+      - {name: "Autoridade Tributária e Aduaneira (AT)", url: "https://www.portaldasfinancas.gov.pt/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+      - {name: "SAF-T PT", url: "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/SAFT_PT/", topics: ["local_gaap"]}
+  AT:
+    official:
+      - {name: "Bundesministerium für Finanzen", url: "https://www.bmf.gv.at/", topics: ["tax_filing","vat_gst"]}
+  CH:
+    official:
+      - {name: "ESTV / FTA", url: "https://www.estv.admin.ch/", topics: ["tax_filing","vat_gst"]}
+  DK:
+    official:
+      - {name: "Skat.dk", url: "https://skat.dk/", topics: ["tax_filing","vat_gst","payroll"]}
+      - {name: "Erhvervsstyrelsen (Bookkeeping Act)", url: "https://erhvervsstyrelsen.dk/", topics: ["local_gaap","e_invoicing"]}
+  SE:
+    official:
+      - {name: "Skatteverket", url: "https://www.skatteverket.se/", topics: ["tax_filing","vat_gst","payroll"]}
+  NO:
+    official:
+      - {name: "Skatteetaten", url: "https://www.skatteetaten.no/", topics: ["tax_filing","vat_gst","payroll"]}
+      - {name: "EHF / Peppol Norway", url: "https://anskaffelser.no/", topics: ["e_invoicing"]}
+  FI:
+    official:
+      - {name: "Vero (Finnish Tax Admin)", url: "https://www.vero.fi/", topics: ["tax_filing","vat_gst","payroll"]}
+  PL:
+    official:
+      - {name: "Krajowa Administracja Skarbowa (KAS)", url: "https://www.gov.pl/web/kas", topics: ["tax_filing","vat_gst"]}
+      - {name: "KSeF (National e-Invoice System)", url: "https://www.podatki.gov.pl/ksef/", topics: ["e_invoicing"]}
+  CZ:
+    official:
+      - {name: "Finanční správa", url: "https://www.financnisprava.cz/", topics: ["tax_filing","vat_gst"]}
+  HU:
+    official:
+      - {name: "NAV (Hungarian Tax Authority)", url: "https://nav.gov.hu/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  RO:
+    official:
+      - {name: "ANAF", url: "https://www.anaf.ro/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  GR:
+    official:
+      - {name: "AADE (myDATA)", url: "https://www.aade.gr/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  TR:
+    official:
+      - {name: "GİB (Gelir İdaresi Başkanlığı)", url: "https://www.gib.gov.tr/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  ZA:
+    official:
+      - {name: "SARS", url: "https://www.sars.gov.za/", topics: ["tax_filing","vat_gst","payroll"]}
+  AE:
+    official:
+      - {name: "Federal Tax Authority UAE", url: "https://tax.gov.ae/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  SA:
+    official:
+      - {name: "ZATCA", url: "https://zatca.gov.sa/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  IL:
+    official:
+      - {name: "Israel Tax Authority", url: "https://www.gov.il/en/departments/israel_tax_authority", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  EG:
+    official:
+      - {name: "Egyptian Tax Authority", url: "https://www.eta.gov.eg/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  NG:
+    official:
+      - {name: "FIRS Nigeria", url: "https://www.firs.gov.ng/", topics: ["tax_filing","vat_gst"]}
+  KE:
+    official:
+      - {name: "Kenya Revenue Authority (KRA)", url: "https://www.kra.go.ke/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  AU:
+    official:
+      - {name: "Australian Taxation Office (ATO)", url: "https://www.ato.gov.au/", topics: ["tax_filing","vat_gst","payroll"]}
+      - {name: "ASIC", url: "https://asic.gov.au/", topics: ["local_gaap"]}
+      - {name: "ABA / Open Banking AU", url: "https://www.cdr.gov.au/", topics: ["banking_payments"]}
+  NZ:
+    official:
+      - {name: "Inland Revenue NZ", url: "https://www.ird.govt.nz/", topics: ["tax_filing","vat_gst","payroll"]}
+  IN:
+    official:
+      - {name: "GSTN / GST Council", url: "https://www.gst.gov.in/", topics: ["vat_gst","e_invoicing"]}
+      - {name: "Income Tax Department", url: "https://www.incometax.gov.in/", topics: ["tax_filing"]}
+      - {name: "MCA21 (Companies)", url: "https://www.mca.gov.in/", topics: ["local_gaap"]}
+      - {name: "EPFO", url: "https://www.epfindia.gov.in/", topics: ["payroll"]}
+  SG:
+    official:
+      - {name: "IRAS", url: "https://www.iras.gov.sg/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  MY:
+    official:
+      - {name: "LHDN / IRBM", url: "https://www.hasil.gov.my/", topics: ["tax_filing","e_invoicing"]}
+      - {name: "Royal Malaysian Customs (SST)", url: "https://www.customs.gov.my/", topics: ["vat_gst"]}
+  ID:
+    official:
+      - {name: "DJP (Direktorat Jenderal Pajak)", url: "https://www.pajak.go.id/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  TH:
+    official:
+      - {name: "Revenue Department Thailand", url: "https://www.rd.go.th/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  VN:
+    official:
+      - {name: "General Department of Taxation (GDT)", url: "https://www.gdt.gov.vn/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  PH:
+    official:
+      - {name: "BIR Philippines", url: "https://www.bir.gov.ph/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  JP:
+    official:
+      - {name: "National Tax Agency (NTA)", url: "https://www.nta.go.jp/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  KR:
+    official:
+      - {name: "National Tax Service (NTS)", url: "https://www.nts.go.kr/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  CN:
+    official:
+      - {name: "State Taxation Administration (STA)", url: "https://www.chinatax.gov.cn/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  HK:
+    official:
+      - {name: "Inland Revenue Department HK", url: "https://www.ird.gov.hk/", topics: ["tax_filing"]}
+  TW:
+    official:
+      - {name: "Ministry of Finance Taiwan", url: "https://www.mof.gov.tw/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  PK:
+    official:
+      - {name: "FBR Pakistan", url: "https://www.fbr.gov.pk/", topics: ["tax_filing","vat_gst"]}
+  BD:
+    official:
+      - {name: "NBR Bangladesh", url: "https://nbr.gov.bd/", topics: ["tax_filing","vat_gst"]}
+  MX:
+    official:
+      - {name: "SAT (Servicio de Administración Tributaria)", url: "https://www.sat.gob.mx/", topics: ["tax_filing","vat_gst","e_invoicing","payroll"]}
+  BR:
+    official:
+      - {name: "Receita Federal", url: "https://www.gov.br/receitafederal/", topics: ["tax_filing","vat_gst","payroll"]}
+      - {name: "NF-e / SPED", url: "https://www.nfe.fazenda.gov.br/", topics: ["e_invoicing"]}
+  AR:
+    official:
+      - {name: "AFIP", url: "https://www.afip.gob.ar/", topics: ["tax_filing","vat_gst","e_invoicing","payroll"]}
+  CL:
+    official:
+      - {name: "SII Chile", url: "https://www.sii.cl/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  CO:
+    official:
+      - {name: "DIAN", url: "https://www.dian.gov.co/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  PE:
+    official:
+      - {name: "SUNAT", url: "https://www.sunat.gob.pe/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  UY:
+    official:
+      - {name: "DGI Uruguay", url: "https://www.dgi.gub.uy/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  EC:
+    official:
+      - {name: "SRI Ecuador", url: "https://www.sri.gob.ec/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  PY:
+    official:
+      - {name: "SET Paraguay", url: "https://www.set.gov.py/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  BO:
+    official:
+      - {name: "Servicio de Impuestos Nacionales", url: "https://www.impuestos.gob.bo/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  VE:
+    official:
+      - {name: "SENIAT", url: "http://www.seniat.gob.ve/", topics: ["tax_filing","vat_gst"]}
+  CR:
+    official:
+      - {name: "Ministerio de Hacienda CR", url: "https://www.hacienda.go.cr/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  PA:
+    official:
+      - {name: "DGI Panamá", url: "https://dgi.mef.gob.pa/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  GT:
+    official:
+      - {name: "SAT Guatemala", url: "https://portal.sat.gob.gt/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  DO:
+    official:
+      - {name: "DGII", url: "https://www.dgii.gov.do/", topics: ["tax_filing","vat_gst","e_invoicing"]}
+  CA:
+    official:
+      - {name: "Canada Revenue Agency (CRA)", url: "https://www.canada.ca/en/revenue-agency.html", topics: ["tax_filing","vat_gst","payroll"]}
+      - {name: "Revenu Québec", url: "https://www.revenuquebec.ca/", topics: ["tax_filing","vat_gst"]}
+      - {name: "Payments Canada", url: "https://www.payments.ca/", topics: ["banking_payments"]}

@@ -1,0 +1,28 @@
+{
+  "iso": "FR",
+  "name": "France",
+  "region": "EMEA",
+  "currency": "EUR",
+  "language": "fr",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "FR-EINV-PPF-2026",
+        "title": "France B2B e-invoicing & e-reporting mandate",
+        "summary": "Phased B2B e-invoicing via PDPs. Receiving capability mandatory for all from Sep 2026; issuance phased through 2026-2027.",
+        "status": "upcoming",
+        "effective_date": "2026-09-01",
+        "source": "https://www.impots.gouv.fr/portail/professionnel/facturation-electronique",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

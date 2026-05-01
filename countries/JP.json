@@ -1,0 +1,28 @@
+{
+  "iso": "JP",
+  "name": "Japan",
+  "region": "APAC",
+  "currency": "JPY",
+  "language": "ja",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [
+      {
+        "id": "JP-QIS-2023",
+        "title": "Qualified Invoice System (QIS)",
+        "summary": "Consumption tax qualified invoice system since Oct 2023.",
+        "status": "live",
+        "effective_date": "2023-10-01",
+        "source": "https://www.nta.go.jp/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "e_invoicing": [],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

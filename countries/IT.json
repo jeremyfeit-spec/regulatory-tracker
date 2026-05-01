@@ -1,0 +1,28 @@
+{
+  "iso": "IT",
+  "name": "Italy",
+  "region": "EMEA",
+  "currency": "EUR",
+  "language": "it",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "IT-FATTURAPA-2019",
+        "title": "FatturaPA — universal e-invoicing via SDI",
+        "summary": "All B2B, B2C, B2G invoices in FatturaPA XML through SDI.",
+        "status": "live",
+        "effective_date": "2019-01-01",
+        "source": "https://www.fatturapa.gov.it/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

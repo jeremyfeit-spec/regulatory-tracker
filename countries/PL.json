@@ -1,0 +1,28 @@
+{
+  "iso": "PL",
+  "name": "Poland",
+  "region": "EMEA",
+  "currency": "PLN",
+  "language": "pl",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "PL-KSEF-2026",
+        "title": "KSeF mandatory B2B e-invoicing",
+        "summary": "KSeF mandatory for large taxpayers from Feb 2026 and all taxpayers from Apr 2026.",
+        "status": "upcoming",
+        "effective_date": "2026-02-01",
+        "source": "https://www.podatki.gov.pl/ksef/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

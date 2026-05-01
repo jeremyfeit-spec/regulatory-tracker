@@ -1,0 +1,16 @@
+{
+  "iso": "KR",
+  "name": "South Korea",
+  "region": "APAC",
+  "currency": "KRW",
+  "language": "ko",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

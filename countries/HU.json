@@ -1,0 +1,28 @@
+{
+  "iso": "HU",
+  "name": "Hungary",
+  "region": "EMEA",
+  "currency": "HUF",
+  "language": "hu",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "HU-RTIR",
+        "title": "Hungary Real-Time Invoice Reporting (RTIR)",
+        "summary": "All B2B and B2C invoices reported in real time to NAV via XML.",
+        "status": "live",
+        "effective_date": "2021-04-01",
+        "source": "https://nav.gov.hu/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

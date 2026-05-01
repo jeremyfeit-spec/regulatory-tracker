@@ -1,0 +1,28 @@
+{
+  "iso": "DE",
+  "name": "Germany",
+  "region": "EMEA",
+  "currency": "EUR",
+  "language": "de",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [
+      {
+        "id": "DE-EINV-2025",
+        "title": "Germany B2B e-invoicing (Wachstumschancengesetz)",
+        "summary": "From 1 Jan 2025 all German B2B businesses must be able to receive structured e-invoices. Issuance mandatory from 2027 (2028 small businesses).",
+        "status": "live",
+        "effective_date": "2025-01-01",
+        "source": "https://www.bundesfinanzministerium.de/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [],
+    "local_gaap": [],
+    "banking_payments": []
+  }
+}

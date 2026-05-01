@@ -1,0 +1,88 @@
+{
+  "iso": "GB",
+  "name": "United Kingdom",
+  "region": "EMEA",
+  "currency": "GBP",
+  "language": "en",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [
+      {
+        "id": "GB-CT-MTD-CORP-2026",
+        "title": "Making Tax Digital for Corporation Tax (consultation)",
+        "summary": "HMRC continues development of MTD for Corporation Tax; mandation date deferred beyond 2026.",
+        "status": "monitoring",
+        "effective_date": "TBD",
+        "source": "https://www.gov.uk/government/consultations/making-tax-digital-for-corporation-tax",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "GB-VAT-MTD-2022",
+        "title": "Making Tax Digital for VAT",
+        "summary": "All VAT-registered businesses must keep digital records and submit returns through MTD-compatible software.",
+        "status": "live",
+        "effective_date": "2022-04-01",
+        "source": "https://www.gov.uk/government/publications/making-tax-digital",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "GB-EINV-CONSULT-2025",
+        "title": "UK e-invoicing consultation",
+        "summary": "HMRC and DBT consultation on standardised e-invoicing in the UK.",
+        "status": "monitoring",
+        "effective_date": "TBD",
+        "source": "https://www.gov.uk/government/consultations/promoting-electronic-invoicing-across-uk-businesses-and-the-public-sector",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "GB-PAYE-RTI",
+        "title": "PAYE Real Time Information (RTI)",
+        "summary": "Employers must report PAYE in real time on or before each payday via FPS submissions.",
+        "status": "live",
+        "effective_date": "2013-04-06",
+        "source": "https://www.gov.uk/running-payroll/reporting-to-hmrc",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "GB-FRS-102",
+        "title": "FRS 102 periodic review (effective 2026)",
+        "summary": "Major amendments to FRS 102 — new lease accounting and revenue recognition models — apply to periods beginning on or after 1 January 2026.",
+        "status": "upcoming",
+        "effective_date": "2026-01-01",
+        "source": "https://www.frc.org.uk/accountants/accounting-and-reporting-policy/uk-accounting-standards",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "GB-OB-VRP-2024",
+        "title": "Variable Recurring Payments (cVRP) rollout",
+        "summary": "JROC roadmap for commercial Variable Recurring Payments under Open Banking framework.",
+        "status": "in_progress",
+        "effective_date": "2025-Q3",
+        "source": "https://www.openbanking.org.uk/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ]
+  }
+}

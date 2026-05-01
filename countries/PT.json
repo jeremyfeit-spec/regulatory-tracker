@@ -1,0 +1,28 @@
+{
+  "iso": "PT",
+  "name": "Portugal",
+  "region": "EMEA",
+  "currency": "EUR",
+  "language": "pt",
+  "last_synced": "2026-05-01T02:15:36Z",
+  "compliance": {
+    "tax_filing": [],
+    "vat_gst": [],
+    "e_invoicing": [],
+    "payroll": [],
+    "local_gaap": [
+      {
+        "id": "PT-SAFT",
+        "title": "SAF-T (PT) monthly submission",
+        "summary": "Monthly SAF-T file submission and certified invoicing software (ATCUD/QR) requirements.",
+        "status": "live",
+        "effective_date": "2013-01-01",
+        "source": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/SAFT_PT/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T02:15:36Z",
+        "last_updated": "2026-05-01T02:15:36Z"
+      }
+    ],
+    "banking_payments": []
+  }
+}
