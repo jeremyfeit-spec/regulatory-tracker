@@ -143,8 +143,9 @@
     box-shadow: var(--shadow-sm);
     margin-bottom: 24px;
   }
-  /* Country matrix scrollable area: ~10 rows visible */
+  /* Scrollable areas: ~10 rows for matrix, ~12 rows for the detail list */
   .matrix-scroll { max-height: 460px; overflow: auto; }
+  .list-scroll   { max-height: 620px; overflow: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   thead th {
     text-align: left;
@@ -192,6 +193,30 @@
   .bucket-pill.repealed { background: var(--red-soft); color: var(--red); }
   .bucket-pill.empty { background: transparent; color: var(--muted-2); border-color: var(--border); }
   td.bucket-cell .count { opacity: .75; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .bucket-pill { cursor: pointer; }
+
+  /* Rich popover for matrix bucket cells */
+  #pop {
+    position: fixed; z-index: 200;
+    background: var(--card); border: 1px solid var(--border-strong); border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(15,23,42,.16), 0 2px 6px rgba(15,23,42,.08);
+    padding: 12px 14px; min-width: 280px; max-width: 360px;
+    font-size: 12.5px; color: var(--ink); line-height: 1.45;
+    pointer-events: auto; opacity: 0; transform: translateY(4px);
+    transition: opacity .12s, transform .12s;
+  }
+  #pop.show { opacity: 1; transform: translateY(0); }
+  #pop .pop-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+  #pop .pop-head .title { font-weight: 700; font-size: 12.5px; color: var(--ink); }
+  #pop .pop-head .sub { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+  #pop .reg { padding: 8px 0; border-top: 1px solid var(--border); }
+  #pop .reg:first-of-type { border-top: 1px solid var(--border); margin-top: 6px; }
+  #pop .reg .reg-title { font-weight: 600; font-size: 12.5px; color: var(--ink); margin-bottom: 3px; }
+  #pop .reg .reg-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+  #pop .reg .reg-meta .badge { font-size: 9.5px; }
+  #pop .reg .reg-meta .eff { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  #pop .reg .reg-meta a { font-size: 11px; }
+  #pop .reg .reg-summary { color: var(--slate); font-size: 12px; margin-top: 4px; }
 
   /* Changes detail table */
   td.job { white-space: nowrap; color: var(--ink-soft); font-size: 12.5px; }
@@ -293,6 +318,7 @@
     <div class="meta"><strong id="result-count">0</strong> results <span id="filter-summary"></span></div>
   </div>
   <div class="table-wrap">
+    <div class="list-scroll">
     <table id="t">
       <thead>
         <tr>
@@ -308,6 +334,7 @@
       </thead>
       <tbody id="tbody"></tbody>
     </table>
+    </div>
     <div id="empty-state" class="empty-state" style="display:none">
       <h3>Nothing matches your filters</h3>
       <div>Try clearing some filters or broadening the search.</div>
@@ -316,6 +343,8 @@
 
   <div class="footer" id="footer-line">Loading…</div>
 </div>
+
+<div id="pop" role="tooltip" aria-hidden="true"></div>
 
 <script>
 const REGION_LABEL = { EMEA: "EMEA", APAC: "APAC", LATAM: "LATAM", NORTH_AMERICA: "North America" };
@@ -379,7 +408,7 @@ function buildCountryMatrix() {
     const row = {
       country: c.name, iso: c.iso, region: c.region,
       total: 0, last_synced: c.last_synced || "",
-      buckets: {} // jobId -> {bestStatus, count, statusBreakdown}
+      buckets: {} // jobId -> {bestStatus, count, items}
     };
     JOBS.forEach(j => {
       const items = (c.compliance && c.compliance[j.id]) || [];
@@ -387,7 +416,7 @@ function buildCountryMatrix() {
       items.forEach(e => {
         if (best === null || STATUS_RANK[e.status] < STATUS_RANK[best]) best = e.status;
       });
-      row.buckets[j.id] = { bestStatus: best, count: items.length };
+      row.buckets[j.id] = { bestStatus: best, count: items.length, items };
       row.total += items.length;
     });
     return row;
@@ -511,7 +540,7 @@ function renderMatrix() {
       if (!b || b.count === 0) {
         cells += `<td class="bucket-cell"><span class="bucket-pill empty">—</span></td>`;
       } else {
-        cells += `<td class="bucket-cell"><span class="bucket-pill ${b.bestStatus}" title="${STATUS_LABEL[b.bestStatus]} (${b.count})"><span class="dot"></span><span class="count">${b.count}</span></span></td>`;
+        cells += `<td class="bucket-cell"><span class="bucket-pill ${b.bestStatus}" data-iso="${c.iso}" data-job="${j.id}" tabindex="0"><span class="dot"></span><span class="count">${b.count}</span></span></td>`;
       }
     });
     cells += `<td class="bucket-cell" style="font-weight:600">${c.total}</td>`;
@@ -672,6 +701,84 @@ function escapeHtml(s) {
   return String(s||"").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]);
 }
 function escapeAttr(s) { return escapeHtml(s); }
+
+/* ---------- Bucket-cell popover ---------- */
+const POP = document.getElementById("pop");
+let popHideTimer = null;
+function showPopover(el) {
+  clearTimeout(popHideTimer);
+  const iso = el.dataset.iso, jobId = el.dataset.job;
+  if (!iso || !jobId) return;
+  const country = DATA.countries.find(c => c.iso === iso);
+  const job = JOBS.find(j => j.id === jobId);
+  if (!country || !job) return;
+  const items = (country.compliance && country.compliance[jobId]) || [];
+  if (!items.length) return;
+
+  const sorted = [...items].sort((a,b) => STATUS_RANK[a.status] - STATUS_RANK[b.status]);
+  POP.innerHTML = `
+    <div class="pop-head">
+      <span class="title">${escapeHtml(country.name)} · ${escapeHtml(job.name)}</span>
+      <span class="sub">${items.length} item${items.length===1?"":"s"}</span>
+    </div>
+    ${sorted.map(e => `
+      <div class="reg">
+        <div class="reg-title">${escapeHtml(e.title || "")}</div>
+        ${e.summary ? `<div class="reg-summary">${escapeHtml(e.summary)}</div>` : ""}
+        <div class="reg-meta">
+          <span class="badge ${e.status||"monitoring"}">${STATUS_LABEL[e.status]||e.status||"monitoring"}</span>
+          <span class="eff">eff. ${escapeHtml(e.effective_date || "TBD")}</span>
+          ${e.source ? `<a href="${escapeAttr(e.source)}" target="_blank" rel="noopener">source ↗</a>` : ""}
+        </div>
+      </div>
+    `).join("")}
+  `;
+  // Position
+  POP.style.visibility = "hidden";
+  POP.classList.add("show");
+  POP.setAttribute("aria-hidden", "false");
+  const rect = el.getBoundingClientRect();
+  const popRect = POP.getBoundingClientRect();
+  let left = rect.left + (rect.width / 2) - (popRect.width / 2);
+  let top = rect.bottom + 8;
+  // Prevent going off the right edge
+  const maxLeft = window.innerWidth - popRect.width - 12;
+  if (left > maxLeft) left = maxLeft;
+  if (left < 12) left = 12;
+  // If not enough room below, flip above
+  if (top + popRect.height > window.innerHeight - 12) {
+    top = rect.top - popRect.height - 8;
+  }
+  POP.style.left = left + "px";
+  POP.style.top = top + "px";
+  POP.style.visibility = "visible";
+}
+function hidePopover(immediate) {
+  clearTimeout(popHideTimer);
+  popHideTimer = setTimeout(() => {
+    POP.classList.remove("show");
+    POP.setAttribute("aria-hidden", "true");
+  }, immediate ? 0 : 180);
+}
+document.body.addEventListener("mouseover", (ev) => {
+  const pill = ev.target.closest(".bucket-pill[data-iso]");
+  if (pill) showPopover(pill);
+});
+document.body.addEventListener("mouseout", (ev) => {
+  const pill = ev.target.closest(".bucket-pill[data-iso]");
+  if (pill && !ev.relatedTarget?.closest("#pop")) hidePopover();
+});
+document.body.addEventListener("focusin", (ev) => {
+  const pill = ev.target.closest(".bucket-pill[data-iso]");
+  if (pill) showPopover(pill);
+});
+document.body.addEventListener("focusout", (ev) => {
+  const pill = ev.target.closest(".bucket-pill[data-iso]");
+  if (pill) hidePopover();
+});
+POP.addEventListener("mouseenter", () => clearTimeout(popHideTimer));
+POP.addEventListener("mouseleave", () => hidePopover());
+window.addEventListener("scroll", () => hidePopover(true), true);
 
 boot();
 </script>
