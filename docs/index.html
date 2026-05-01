@@ -217,6 +217,18 @@
   #pop .reg .reg-meta .eff { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
   #pop .reg .reg-meta a { font-size: 11px; }
   #pop .reg .reg-summary { color: var(--slate); font-size: 12px; margin-top: 4px; }
+  #pop .reg .reg-source { display: flex; gap: 8px; align-items: center; margin-top: 6px; flex-wrap: wrap; }
+  #pop .reg .reg-source a { font-size: 11px; color: var(--brand); }
+  #pop .reg .reg-source a:hover { text-decoration: underline; }
+  #pop .reg .reg-source .src-none { font-size: 11px; color: var(--muted-2); font-style: italic; }
+  #pop .reg .reg-source .src-type {
+    font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 999px;
+    text-transform: uppercase; letter-spacing: .04em; white-space: nowrap;
+  }
+  #pop .reg .reg-source .src-official  { background: var(--brand-soft); color: var(--brand); }
+  #pop .reg .reg-source .src-advisory  { background: var(--amber-soft); color: var(--amber); }
+  #pop .reg .reg-source .src-news      { background: var(--slate-soft); color: var(--slate); }
+  #pop .reg .reg-source .src-web       { background: var(--slate-soft); color: var(--muted); }
 
   /* Changes detail table */
   td.job { white-space: nowrap; color: var(--ink-soft); font-size: 12.5px; }
@@ -701,6 +713,11 @@ function escapeHtml(s) {
   return String(s||"").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]);
 }
 function escapeAttr(s) { return escapeHtml(s); }
+function sourceDomain(url) {
+  if (!url) return "";
+  try { return new URL(url).hostname.replace(/^www\./, ""); }
+  catch { return url.length > 40 ? url.slice(0, 40) + "…" : url; }
+}
 
 /* ---------- Bucket-cell popover ---------- */
 const POP = document.getElementById("pop");
@@ -721,17 +738,26 @@ function showPopover(el) {
       <span class="title">${escapeHtml(country.name)} · ${escapeHtml(job.name)}</span>
       <span class="sub">${items.length} item${items.length===1?"":"s"}</span>
     </div>
-    ${sorted.map(e => `
+    ${sorted.map(e => {
+      const dom = sourceDomain(e.source);
+      const typeLabel = e.source_type ? e.source_type.charAt(0).toUpperCase() + e.source_type.slice(1) : "";
+      return `
       <div class="reg">
         <div class="reg-title">${escapeHtml(e.title || "")}</div>
         ${e.summary ? `<div class="reg-summary">${escapeHtml(e.summary)}</div>` : ""}
         <div class="reg-meta">
           <span class="badge ${e.status||"monitoring"}">${STATUS_LABEL[e.status]||e.status||"monitoring"}</span>
           <span class="eff">eff. ${escapeHtml(e.effective_date || "TBD")}</span>
-          ${e.source ? `<a href="${escapeAttr(e.source)}" target="_blank" rel="noopener">source ↗</a>` : ""}
+        </div>
+        <div class="reg-source">
+          ${typeLabel ? `<span class="src-type src-${e.source_type}">${escapeHtml(typeLabel)}</span>` : ""}
+          ${e.source
+            ? `<a href="${escapeAttr(e.source)}" target="_blank" rel="noopener" title="${escapeAttr(e.source)}">${escapeHtml(dom)} ↗</a>`
+            : `<span class="src-none">no source linked</span>`}
         </div>
       </div>
-    `).join("")}
+    `;
+    }).join("")}
   `;
   // Position
   POP.style.visibility = "hidden";
