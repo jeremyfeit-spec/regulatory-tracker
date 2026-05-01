@@ -4,11 +4,23 @@
   "region": "LATAM",
   "currency": "PAB",
   "language": "es",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
     "vat_gst": [],
-    "e_invoicing": [],
+    "e_invoicing": [
+      {
+        "id": "PA-FE",
+        "title": "Factura Electrónica Panamá",
+        "summary": "Mandatory e-invoicing via DGI; phased rollout 2022-2025.",
+        "status": "in_progress",
+        "effective_date": "2022-08-01",
+        "source": "https://dgi.mef.gob.pa/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []

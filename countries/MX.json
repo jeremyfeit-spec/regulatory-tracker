@@ -4,37 +4,107 @@
   "region": "LATAM",
   "currency": "MXN",
   "language": "es",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
+    "tax_filing": [
+      {
+        "id": "MX-MONTHLY-ANNUAL",
+        "title": "Monthly provisional + annual return to SAT",
+        "summary": "Monthly provisional payments + annual ISR return.",
+        "status": "live",
+        "effective_date": "2014-01-01",
+        "source": "https://www.sat.gob.mx/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "MX-IVA-16",
+        "title": "Mexican IVA — 16% with withholding",
+        "summary": "16% IVA; specific withholding requirements for digital services and platforms.",
+        "status": "live",
+        "effective_date": "2014-01-01",
+        "source": "https://www.sat.gob.mx/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
         "id": "MX-CFDI-40",
-        "title": "CFDI 4.0 mandatory",
-        "summary": "All electronic invoices in CFDI 4.0; Carta Porte 3.0 supplement for transport.",
+        "title": "CFDI 4.0 mandatory via PAC",
+        "summary": "All electronic invoices in CFDI 4.0 format stamped through certified PAC; clearance model since 2014.",
         "status": "live",
         "effective_date": "2023-04-01",
         "source": "https://www.sat.gob.mx/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "MX-CARTA-PORTE",
+        "title": "Carta Porte 3.1 supplement",
+        "summary": "Mandatory transport supplement (Carta Porte) with detailed logistics data.",
+        "status": "live",
+        "effective_date": "2024-08-01",
+        "source": "https://www.sat.gob.mx/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "payroll": [
       {
         "id": "MX-NOMINA-CFDI",
         "title": "Nómina CFDI digital payroll receipts",
-        "summary": "Employers must issue payroll CFDI receipts to all employees stamped through PAC.",
+        "summary": "Employers must issue payroll CFDI receipts stamped through PAC.",
         "status": "live",
         "effective_date": "2014-04-01",
         "source": "https://www.sat.gob.mx/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "MX-IMSS-INFONAVIT",
+        "title": "IMSS (~24%) + Infonavit (5%)",
+        "summary": "HIGH complexity: IMSS social security ~24% + Infonavit 5% + state payroll tax.",
+        "status": "live",
+        "effective_date": "2014-01-01",
+        "source": "https://www.imss.gob.mx/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "local_gaap": [],
-    "banking_payments": []
+    "local_gaap": [
+      {
+        "id": "MX-NIF",
+        "title": "NIF (Mexican Financial Reporting Standards)",
+        "summary": "NIF converging with IFRS; mandatory for non-listed entities.",
+        "status": "live",
+        "effective_date": "2006-01-01",
+        "source": "https://www.cinif.org.mx/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "MX-SPEI-CODI",
+        "title": "SPEI real-time + CoDi mobile",
+        "summary": "SPEI for real-time interbank; CoDi for mobile QR payments.",
+        "status": "live",
+        "effective_date": "2019-09-30",
+        "source": "https://www.banxico.org.mx/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

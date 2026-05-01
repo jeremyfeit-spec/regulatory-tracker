@@ -4,11 +4,23 @@
   "region": "EMEA",
   "currency": "TRY",
   "language": "tr",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
     "vat_gst": [],
-    "e_invoicing": [],
+    "e_invoicing": [
+      {
+        "id": "TR-EFATURA",
+        "title": "Turkey e-fatura / e-arşiv",
+        "summary": "Mandatory e-invoicing for taxpayers above turnover thresholds; e-arşiv for B2C.",
+        "status": "live",
+        "effective_date": "2014-01-01",
+        "source": "https://www.gib.gov.tr/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []

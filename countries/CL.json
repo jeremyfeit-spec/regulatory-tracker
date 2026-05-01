@@ -4,10 +4,22 @@
   "region": "LATAM",
   "currency": "CLP",
   "language": "es",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
+    "vat_gst": [
+      {
+        "id": "CL-IVA-19",
+        "title": "Chilean IVA — 19%",
+        "summary": "19% IVA; monthly returns to SII.",
+        "status": "live",
+        "effective_date": "2003-01-01",
+        "source": "https://www.sii.cl/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
         "id": "CL-DTE",
@@ -17,8 +29,8 @@
         "effective_date": "2018-02-01",
         "source": "https://www.sii.cl/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "payroll": [],

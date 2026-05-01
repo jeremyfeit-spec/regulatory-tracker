@@ -4,11 +4,23 @@
   "region": "LATAM",
   "currency": "PYG",
   "language": "es",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
     "vat_gst": [],
-    "e_invoicing": [],
+    "e_invoicing": [
+      {
+        "id": "PY-SIFEN",
+        "title": "SIFEN e-Kuatia (Paraguay)",
+        "summary": "Phased e-invoicing rollout via SIFEN; mandatory for large taxpayers.",
+        "status": "in_progress",
+        "effective_date": "rolling",
+        "source": "https://www.set.gov.py/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []

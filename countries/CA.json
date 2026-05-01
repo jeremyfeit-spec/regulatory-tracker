@@ -4,48 +4,95 @@
   "region": "NORTH_AMERICA",
   "currency": "CAD",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [
       {
-        "id": "CA-T2-CORPORATE",
-        "title": "T2 corporate tax e-filing",
-        "summary": "Mandatory electronic filing of T2 returns for revenues > $1M.",
+        "id": "CA-T2-CORP",
+        "title": "T2 corporate tax — e-file mandatory >$1M (now lower)",
+        "summary": "Mandatory electronic filing of T2 returns; threshold continues to be reduced.",
         "status": "live",
         "effective_date": "2014-01-01",
         "source": "https://www.canada.ca/en/revenue-agency.html",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "vat_gst": [
       {
-        "id": "CA-GSTHST-DIGITAL",
-        "title": "GST/HST digital economy rules",
-        "summary": "Non-resident vendors and digital platforms must register and remit GST/HST since July 2021.",
+        "id": "CA-GSTHST",
+        "title": "GST/HST + provincial QST",
+        "summary": "5% federal GST + provincial HST/QST/PST; quarterly/annual returns. Digital economy rules since Jul 2021.",
         "status": "live",
         "effective_date": "2021-07-01",
         "source": "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy-gsthst.html",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "e_invoicing": [],
-    "payroll": [],
-    "local_gaap": [],
+    "e_invoicing": [
+      {
+        "id": "CA-NO-MANDATE",
+        "title": "No e-invoicing mandate — voluntary",
+        "summary": "No federal mandate currently; voluntary B2B/B2G adoption growing.",
+        "status": "monitoring",
+        "effective_date": "TBD",
+        "source": "https://www.canada.ca/en/revenue-agency.html",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "CA-CPP-EI",
+        "title": "CPP + EI contributions",
+        "summary": "LOW-MEDIUM complexity: CPP (~5.95%) + EI (~2.32%) employer share; straightforward.",
+        "status": "live",
+        "effective_date": "1966-01-01",
+        "source": "https://www.canada.ca/en/revenue-agency.html",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "CA-IFRS-ASPE",
+        "title": "IFRS or ASPE",
+        "summary": "Public companies IFRS; private enterprises ASPE (Accounting Standards for Private Enterprises).",
+        "status": "live",
+        "effective_date": "2011-01-01",
+        "source": "https://www.cpacanada.ca/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "banking_payments": [
       {
-        "id": "CA-RTR-2026",
+        "id": "CA-OPEN-BANKING",
+        "title": "Open banking framework emerging",
+        "summary": "Federal open banking framework legislation pending (2024-2025); Interac dominant for payments.",
+        "status": "in_progress",
+        "effective_date": "rolling",
+        "source": "https://www.payments.ca/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "CA-RTR-2027",
         "title": "Real-Time Rail (RTR)",
-        "summary": "Payments Canada Real-Time Rail go-live target window late 2026.",
+        "summary": "Payments Canada Real-Time Rail go-live target window late 2026 / Q1 2027.",
         "status": "monitoring",
-        "effective_date": "2026-Q4",
+        "effective_date": "2027-Q1",
         "source": "https://www.payments.ca/our-systems/our-modernization-program/real-time-rail",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ]
   }

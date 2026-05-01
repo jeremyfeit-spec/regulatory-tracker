@@ -4,84 +4,128 @@
   "region": "EMEA",
   "currency": "GBP",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [
       {
-        "id": "GB-CT-MTD-CORP-2026",
-        "title": "Making Tax Digital for Corporation Tax (consultation)",
-        "summary": "HMRC continues development of MTD for Corporation Tax; mandation date deferred beyond 2026.",
-        "status": "monitoring",
-        "effective_date": "TBD",
-        "source": "https://www.gov.uk/government/consultations/making-tax-digital-for-corporation-tax",
+        "id": "GB-CT-CT600",
+        "title": "Annual Corporation Tax (CT600)",
+        "summary": "Companies file CT600 within 12 months of accounting period end; payment within 9 months and 1 day. Mandatory iXBRL tagging for accounts.",
+        "status": "live",
+        "effective_date": "2010-04-01",
+        "source": "https://www.gov.uk/company-tax-returns",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "GB-MTD-ITSA-2026",
+        "title": "MTD for Income Tax Self Assessment (ITSA) — sole traders >£50K",
+        "summary": "Mandatory MTD ITSA quarterly digital reporting from April 2026 for sole traders & landlords with income >£50K; >£30K from April 2027.",
+        "status": "upcoming",
+        "effective_date": "2026-04-06",
+        "source": "https://www.gov.uk/government/publications/making-tax-digital-for-income-tax-as-an-agent-step-by-step-guide",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "vat_gst": [
       {
         "id": "GB-VAT-MTD-2022",
         "title": "Making Tax Digital for VAT",
-        "summary": "All VAT-registered businesses must keep digital records and submit returns through MTD-compatible software.",
+        "summary": "All VAT-registered businesses must keep digital records and file VAT returns through MTD-compatible software. Standard 20% / reduced 5% / zero rates.",
         "status": "live",
         "effective_date": "2022-04-01",
         "source": "https://www.gov.uk/government/publications/making-tax-digital",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "e_invoicing": [
       {
         "id": "GB-EINV-CONSULT-2025",
-        "title": "UK e-invoicing consultation",
-        "summary": "HMRC and DBT consultation on standardised e-invoicing in the UK.",
+        "title": "UK e-invoicing consultation (no B2B mandate yet)",
+        "summary": "HMRC and DBT consultation on standardising UK e-invoicing; currently no B2B mandate. UK is post-audit / PEPPOL-direction.",
         "status": "monitoring",
         "effective_date": "TBD",
         "source": "https://www.gov.uk/government/consultations/promoting-electronic-invoicing-across-uk-businesses-and-the-public-sector",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "payroll": [
       {
         "id": "GB-PAYE-RTI",
         "title": "PAYE Real Time Information (RTI)",
-        "summary": "Employers must report PAYE in real time on or before each payday via FPS submissions.",
+        "summary": "Employers report PAYE on/before each payday via FPS submissions. ~15% employer burden (NI contributions + auto-enrolment pension).",
         "status": "live",
         "effective_date": "2013-04-06",
         "source": "https://www.gov.uk/running-payroll/reporting-to-hmrc",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "GB-AE-PENSION",
+        "title": "Auto-enrolment workplace pension",
+        "summary": "All employers must auto-enrol eligible workers and make minimum pension contributions; ongoing re-enrolment every 3 years.",
+        "status": "live",
+        "effective_date": "2012-10-01",
+        "source": "https://www.thepensionsregulator.gov.uk/en/employers/automatic-enrolment-duties",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "local_gaap": [
       {
         "id": "GB-FRS-102",
-        "title": "FRS 102 periodic review (effective 2026)",
-        "summary": "Major amendments to FRS 102 — new lease accounting and revenue recognition models — apply to periods beginning on or after 1 January 2026.",
+        "title": "FRS 102 (UK GAAP) — periodic review effective 2026",
+        "summary": "FRS 102 amendments — new lease accounting and revenue recognition models — apply to periods beginning on or after 1 January 2026.",
         "status": "upcoming",
         "effective_date": "2026-01-01",
         "source": "https://www.frc.org.uk/accountants/accounting-and-reporting-policy/uk-accounting-standards",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "GB-CH-FILING",
+        "title": "Companies House annual accounts",
+        "summary": "Annual accounts filed within 9 months of year end; size-based disclosure thresholds (micro/small/medium/large).",
+        "status": "live",
+        "effective_date": "2006-04-01",
+        "source": "https://www.gov.uk/annual-accounts",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "banking_payments": [
       {
-        "id": "GB-OB-VRP-2024",
+        "id": "GB-OPEN-BANKING",
+        "title": "UK Open Banking (FCA-regulated)",
+        "summary": "Most mature open banking framework globally. Standardised AISP/PISP APIs across the CMA9 and beyond.",
+        "status": "live",
+        "effective_date": "2018-01-13",
+        "source": "https://www.openbanking.org.uk/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "GB-VRP-CVRP",
         "title": "Variable Recurring Payments (cVRP) rollout",
-        "summary": "JROC roadmap for commercial Variable Recurring Payments under Open Banking framework.",
+        "summary": "JROC roadmap for commercial Variable Recurring Payments expanding beyond sweeping use cases.",
         "status": "in_progress",
         "effective_date": "2025-Q3",
         "source": "https://www.openbanking.org.uk/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ]
   }

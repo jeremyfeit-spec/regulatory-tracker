@@ -4,13 +4,85 @@
   "region": "EMEA",
   "currency": "KES",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
-    "e_invoicing": [],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "tax_filing": [
+      {
+        "id": "KE-IT",
+        "title": "Annual income tax + monthly VAT",
+        "summary": "Annual income tax via iTax; monthly VAT filings.",
+        "status": "live",
+        "effective_date": "2014-01-01",
+        "source": "https://www.kra.go.ke/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "KE-VAT-16",
+        "title": "Kenya VAT — 16%",
+        "summary": "16% VAT; monthly returns to KRA.",
+        "status": "live",
+        "effective_date": "2003-01-01",
+        "source": "https://www.kra.go.ke/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "KE-ETIMS-2024",
+        "title": "eTIMS mandatory since Jan 2024 — JSON to KRA",
+        "summary": "eTIMS electronic Tax Invoice Management System mandatory for all VAT-registered businesses; JSON transmission to KRA.",
+        "status": "live",
+        "effective_date": "2024-01-01",
+        "source": "https://etims.kra.go.ke/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "KE-NSSF-NHIF",
+        "title": "NSSF + NHIF + Housing Levy",
+        "summary": "MEDIUM: NSSF + NHIF (now SHIF) + Affordable Housing Levy 1.5% (introduced 2024).",
+        "status": "live",
+        "effective_date": "2024-03-19",
+        "source": "https://www.kra.go.ke/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "KE-IFRS",
+        "title": "IFRS mandatory",
+        "summary": "IFRS mandatory for all entities; IFRS for SMEs allowed.",
+        "status": "live",
+        "effective_date": "1999-01-01",
+        "source": "https://www.icpak.com/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "KE-MPESA-PESALINK",
+        "title": "M-Pesa dominant + PesaLink",
+        "summary": "M-Pesa dominates payments; PesaLink for inter-bank instant transfers.",
+        "status": "live",
+        "effective_date": "2007-03-06",
+        "source": "https://www.centralbank.go.ke/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

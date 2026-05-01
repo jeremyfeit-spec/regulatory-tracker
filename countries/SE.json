@@ -4,13 +4,96 @@
   "region": "EMEA",
   "currency": "SEK",
   "language": "sv",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
-    "e_invoicing": [],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "tax_filing": [
+      {
+        "id": "SE-INK-DECL",
+        "title": "Annual income declaration",
+        "summary": "Annual income tax return via Skatteverket; corporate rate 20.6%.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://www.skatteverket.se/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "SE-VAT-MOMS",
+        "title": "Swedish VAT (moms) — monthly/quarterly",
+        "summary": "Standard 25% / 12% / 6% rates. Monthly or quarterly returns to Skatteverket.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://www.skatteverket.se/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "SE-PEPPOL-B2G",
+        "title": "PEPPOL mandatory for B2G since 2019",
+        "summary": "All public-sector invoices must be sent as PEPPOL BIS Billing 3.",
+        "status": "live",
+        "effective_date": "2019-04-01",
+        "source": "https://www.peppol.eu/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "SE-PEPPOL-B2B",
+        "title": "B2B PEPPOL adoption trending",
+        "summary": "Voluntary but rapidly growing B2B PEPPOL adoption; aligns with EU ViDA 2030.",
+        "status": "in_progress",
+        "effective_date": "rolling",
+        "source": "https://www.peppol.eu/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "SE-EMP-FEES",
+        "title": "Swedish payroll — employer social fees ~31%",
+        "summary": "MEDIUM complexity: employer social fees (arbetsgivaravgifter) ~31%; monthly AGI reporting.",
+        "status": "live",
+        "effective_date": "2019-01-01",
+        "source": "https://www.skatteverket.se/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "SE-BFN",
+        "title": "Swedish GAAP (BFN K2/K3) or IFRS",
+        "summary": "K2/K3 frameworks per Bokföringsnämnden; listed entities IFRS.",
+        "status": "live",
+        "effective_date": "2014-01-01",
+        "source": "https://www.bfn.se/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "SE-PSD2-SWISH",
+        "title": "PSD2 + SEPA + Swish + BankID",
+        "summary": "PSD2 + SEPA. Swish dominant for instant payments; BankID for authentication.",
+        "status": "live",
+        "effective_date": "2018-01-13",
+        "source": "https://www.riksbank.se/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

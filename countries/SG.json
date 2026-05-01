@@ -4,25 +4,85 @@
   "region": "APAC",
   "currency": "SGD",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
+    "tax_filing": [
+      {
+        "id": "SG-CIT",
+        "title": "Annual income tax + quarterly GST",
+        "summary": "Annual corporate income tax (17%); quarterly GST.",
+        "status": "live",
+        "effective_date": "2008-01-01",
+        "source": "https://www.iras.gov.sg/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "SG-GST-9PCT",
+        "title": "Singapore GST — 9% (from Jan 2024)",
+        "summary": "9% GST (raised from 8% on 1 Jan 2024); quarterly returns to IRAS.",
+        "status": "live",
+        "effective_date": "2024-01-01",
+        "source": "https://www.iras.gov.sg/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
-        "id": "SG-INVOICENOW-GST-2025",
-        "title": "InvoiceNow mandatory for GST-registered businesses",
-        "summary": "Phased rollout: voluntary May 2025; new GST registrants Nov 2025; all newly incorporated GST-registered Apr 2026.",
+        "id": "SG-INVOICENOW-2025",
+        "title": "InvoiceNow mandatory: Nov 2025 (new GST regs); Apr 2026+ (existing)",
+        "summary": "PEPPOL-based InvoiceNow mandatory for newly incorporated GST-registered businesses from 1 Nov 2025; existing GST-registered phased from 1 Apr 2026. Post-audit model.",
         "status": "in_progress",
         "effective_date": "2025-11-01",
         "source": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-invoicenow-requirement",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "payroll": [
+      {
+        "id": "SG-CPF",
+        "title": "CPF age-banded contributions ~17%",
+        "summary": "LOW complexity: CPF (Central Provident Fund) age-banded employer contribution rates ~17%.",
+        "status": "live",
+        "effective_date": "1955-07-01",
+        "source": "https://www.cpf.gov.sg/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "SG-SFRS",
+        "title": "SFRS (IFRS-aligned)",
+        "summary": "Singapore Financial Reporting Standards — substantially aligned with IFRS.",
+        "status": "live",
+        "effective_date": "2003-01-01",
+        "source": "https://www.acra.gov.sg/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "SG-FAST-PAYNOW-SGFINDEX",
+        "title": "FAST + PayNow + SGFinDex open banking",
+        "summary": "FAST/PayNow real-time rails; SGFinDex enables consented data sharing across banks.",
+        "status": "live",
+        "effective_date": "2018-07-12",
+        "source": "https://www.mas.gov.sg/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

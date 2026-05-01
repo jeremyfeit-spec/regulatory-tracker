@@ -4,21 +4,21 @@
   "region": "LATAM",
   "currency": "COP",
   "language": "es",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
     "vat_gst": [],
     "e_invoicing": [
       {
-        "id": "CO-EINV-DIAN",
-        "title": "DIAN e-invoicing & e-payroll",
-        "summary": "Mandatory electronic invoicing and Nómina Electrónica via DIAN.",
+        "id": "CO-DIAN-EINV",
+        "title": "DIAN e-invoicing + Nómina Electrónica",
+        "summary": "Mandatory electronic invoicing AND e-payroll (Nómina Electrónica) via DIAN.",
         "status": "live",
         "effective_date": "2020-01-01",
         "source": "https://www.dian.gov.co/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "payroll": [],

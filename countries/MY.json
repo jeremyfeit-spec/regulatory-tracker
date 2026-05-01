@@ -4,25 +4,107 @@
   "region": "APAC",
   "currency": "MYR",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
+    "tax_filing": [
+      {
+        "id": "MY-IT-SST",
+        "title": "Annual income tax + bi-monthly SST",
+        "summary": "Annual income tax (24% corporate); bi-monthly SST returns.",
+        "status": "live",
+        "effective_date": "2018-09-01",
+        "source": "https://www.hasil.gov.my/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "MY-SST",
+        "title": "Malaysia SST — Sales 10% / Service 8%",
+        "summary": "SST replaces GST; Sales Tax 10% + Service Tax 8% (raised from 6% Mar 2024).",
+        "status": "live",
+        "effective_date": "2024-03-01",
+        "source": "https://www.customs.gov.my/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
-        "id": "MY-EINV-2024",
-        "title": "Malaysia e-invoicing (LHDN MyInvois)",
-        "summary": "Phased rollout by turnover; large taxpayers Aug 2024; full mandate by 2025-2026.",
-        "status": "in_progress",
+        "id": "MY-EINV-LARGE-2024",
+        "title": "Malaysia e-invoicing — Aug 2024 (>RM100M)",
+        "summary": "Phase 1: businesses with revenue >RM100M from 1 Aug 2024.",
+        "status": "live",
         "effective_date": "2024-08-01",
         "source": "https://www.hasil.gov.my/en/e-invoice/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "MY-EINV-MID-2025",
+        "title": "Malaysia e-invoicing — Jul 2025 (>RM5M)",
+        "summary": "Phase 2: businesses >RM5M from 1 Jul 2025; structured digital invoices via MyInvois (CTC clearance model).",
+        "status": "upcoming",
+        "effective_date": "2025-07-01",
+        "source": "https://www.hasil.gov.my/en/e-invoice/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "MY-EINV-ALL-2026",
+        "title": "Malaysia e-invoicing — Jul 2026 (all)",
+        "summary": "Phase 3: ALL businesses from 1 Jul 2026.",
+        "status": "upcoming",
+        "effective_date": "2026-07-01",
+        "source": "https://www.hasil.gov.my/en/e-invoice/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "payroll": [
+      {
+        "id": "MY-EPF-SOCSO",
+        "title": "EPF + SOCSO + EIS",
+        "summary": "MEDIUM complexity: EPF Provident Fund + SOCSO social security + EIS employment insurance.",
+        "status": "live",
+        "effective_date": "1991-07-01",
+        "source": "https://www.kwsp.gov.my/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "MY-MFRS",
+        "title": "MFRS (IFRS-aligned)",
+        "summary": "Malaysian Financial Reporting Standards substantially aligned with IFRS.",
+        "status": "live",
+        "effective_date": "2012-01-01",
+        "source": "https://www.masb.org.my/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "MY-DUITNOW",
+        "title": "DuitNow + growing digital payments",
+        "summary": "DuitNow real-time payments; QR adoption accelerating.",
+        "status": "live",
+        "effective_date": "2018-12-08",
+        "source": "https://www.bnm.gov.my/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

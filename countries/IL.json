@@ -4,10 +4,22 @@
   "region": "EMEA",
   "currency": "ILS",
   "language": "he",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
+    "vat_gst": [
+      {
+        "id": "IL-VAT",
+        "title": "Israeli VAT — 18% (Jan 2025)",
+        "summary": "18% VAT (raised from 17% in Jan 2025); monthly returns.",
+        "status": "live",
+        "effective_date": "2025-01-01",
+        "source": "https://www.gov.il/en/departments/israel_tax_authority",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [],
     "payroll": [],
     "local_gaap": [],

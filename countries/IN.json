@@ -4,37 +4,96 @@
   "region": "APAC",
   "currency": "INR",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [
       {
-        "id": "IN-TDS-26AS-AIS",
-        "title": "Annual Information Statement (AIS)",
-        "summary": "Income Tax Department continues expanding AIS coverage.",
-        "status": "in_progress",
-        "effective_date": "rolling",
-        "source": "https://www.incometax.gov.in/",
+        "id": "IN-GSTR-AUDIT",
+        "title": "Quarterly GSTR-1/3B + annual return + statutory audit",
+        "summary": "Quarterly GSTR-1 and GSTR-3B; annual GSTR-9; mandatory statutory audit for all companies (Companies Act).",
+        "status": "live",
+        "effective_date": "2017-07-01",
+        "source": "https://www.gst.gov.in/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "vat_gst": [
       {
         "id": "IN-GST-EINV-5CR",
-        "title": "GST e-invoicing threshold lowered to ₹5 Cr",
-        "summary": "B2B e-invoicing via IRP mandatory for taxpayers > ₹5 Crore (since Aug 2023).",
+        "title": "GST e-invoicing — IRP portal real-time, threshold ₹5 Cr",
+        "summary": "B2B e-invoicing via IRP mandatory for taxpayers with aggregate turnover >₹5 Cr (since Aug 2023); JSON schema, real-time clearance. Multi-rate 5%/12%/18%/28%.",
         "status": "live",
         "effective_date": "2023-08-01",
         "source": "https://www.gst.gov.in/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "e_invoicing": [],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "e_invoicing": [
+      {
+        "id": "IN-GST-EINV",
+        "title": "Mandatory GST e-invoicing via IRP",
+        "summary": "Mandatory IRP portal real-time clearance; QR + IRN.",
+        "status": "live",
+        "effective_date": "2023-08-01",
+        "source": "https://einvoice1.gst.gov.in/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "IN-PF-ESI",
+        "title": "PF (12%+12%) + ESI + multi-state professional tax",
+        "summary": "HIGH (multi-state) complexity: Provident Fund 12%+12%, ESI, professional tax varies by state.",
+        "status": "live",
+        "effective_date": "1952-11-15",
+        "source": "https://www.epfindia.gov.in/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "IN-IND-AS",
+        "title": "Ind AS (IFRS-converged with carve-outs)",
+        "summary": "Ind AS for companies above thresholds; IFRS-converged with India-specific carve-outs.",
+        "status": "live",
+        "effective_date": "2016-04-01",
+        "source": "https://www.mca.gov.in/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "IN-UPI",
+        "title": "UPI dominant for real-time payments",
+        "summary": "Unified Payments Interface dominates Indian retail payments — 14B+ monthly transactions.",
+        "status": "live",
+        "effective_date": "2016-04-11",
+        "source": "https://www.npci.org.in/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "IN-AA",
+        "title": "Account Aggregator framework",
+        "summary": "RBI Account Aggregator framework — open banking equivalent for consented financial data sharing.",
+        "status": "live",
+        "effective_date": "2021-09-02",
+        "source": "https://sahamati.org.in/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

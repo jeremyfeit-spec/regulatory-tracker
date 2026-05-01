@@ -4,36 +4,96 @@
   "region": "EMEA",
   "currency": "EUR",
   "language": "es",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
+    "tax_filing": [
+      {
+        "id": "ES-CIT-MODELO200",
+        "title": "Modelo 200 — annual corporate tax + Modelo 303/390 VAT",
+        "summary": "Corporate income tax via Modelo 200; VAT via Modelo 303 (quarterly/monthly) and Modelo 390 (annual recap).",
+        "status": "live",
+        "effective_date": "2014-01-01",
+        "source": "https://www.agenciatributaria.es/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "ES-VAT-SII",
+        "title": "SII real-time VAT reporting (4-day window)",
+        "summary": "Suministro Inmediato de Información — large taxpayers must transmit invoice data to AEAT within 4 working days. Standard 21% / 10% / 4% rates.",
+        "status": "live",
+        "effective_date": "2017-07-01",
+        "source": "https://www.agenciatributaria.es/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
         "id": "ES-VERIFACTU-2026",
-        "title": "Verifactu (Royal Decree 1007/2023)",
-        "summary": "Certified billing software requirements; voluntary 2025, mandatory 2026.",
+        "title": "Verifactu (Royal Decree 1007/2023) certified billing software",
+        "summary": "Certified billing software requirements; companies adopt from 1 Jul 2025; self-employed from 1 Jan 2026.",
         "status": "upcoming",
-        "effective_date": "2026-01-01",
+        "effective_date": "2025-07-01",
         "source": "https://www.agenciatributaria.es/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       },
       {
-        "id": "ES-CREALE-B2B-2026",
-        "title": "Crea y Crece B2B e-invoicing",
-        "summary": "B2B e-invoicing mandate under Crea y Crece law; phased rollout pending technical regulation.",
+        "id": "ES-CREALE-B2B-2027",
+        "title": "Crea y Crece B2B e-invoicing — ~2027",
+        "summary": "Mandatory B2B e-invoicing under Crea y Crece law; structured XML via AEAT (SII/VeriFactu) — phased rollout pending technical regulation.",
         "status": "upcoming",
-        "effective_date": "TBD",
+        "effective_date": "2027-01-01",
         "source": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-15818",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "payroll": [
+      {
+        "id": "ES-SS-30PCT",
+        "title": "Spanish social security — ~30% employer",
+        "summary": "HIGH: ~30% employer contribution (social security, contingencies). Quarterly or annual payroll tax.",
+        "status": "live",
+        "effective_date": "2003-01-01",
+        "source": "https://www.seg-social.es/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "ES-PGC",
+        "title": "Plan General de Contabilidad (PGC)",
+        "summary": "Mandatory chart of accounts structure for Spanish entities; SMBs use PGC for statutory accounts.",
+        "status": "live",
+        "effective_date": "2008-01-01",
+        "source": "https://www.icac.gob.es/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "ES-PSD2-BIZUM",
+        "title": "PSD2 + SEPA + Bizum mobile payments",
+        "summary": "PSD2 open banking + SEPA. Bizum is dominant for instant P2P/B2C payments in Spain.",
+        "status": "live",
+        "effective_date": "2018-01-13",
+        "source": "https://www.bde.es/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

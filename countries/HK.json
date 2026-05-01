@@ -4,9 +4,21 @@
   "region": "APAC",
   "currency": "HKD",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
+    "tax_filing": [
+      {
+        "id": "HK-PROFITS-TAX",
+        "title": "Hong Kong Profits Tax",
+        "summary": "16.5% profits tax; annual return to IRD. No VAT/GST.",
+        "status": "live",
+        "effective_date": "2008-04-01",
+        "source": "https://www.ird.gov.hk/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "vat_gst": [],
     "e_invoicing": [],
     "payroll": [],

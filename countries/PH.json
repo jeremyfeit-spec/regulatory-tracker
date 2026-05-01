@@ -4,21 +4,21 @@
   "region": "APAC",
   "currency": "PHP",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
     "vat_gst": [],
     "e_invoicing": [
       {
-        "id": "PH-EIS-2024",
+        "id": "PH-EIS-2022",
         "title": "BIR Electronic Invoicing System (EIS)",
-        "summary": "Top 100 large taxpayers and exporters required; phased expansion.",
+        "summary": "Top 100 large taxpayers and exporters required since Jul 2022; phased expansion ongoing.",
         "status": "in_progress",
         "effective_date": "2022-07-01",
         "source": "https://www.bir.gov.ph/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "payroll": [],

@@ -4,10 +4,22 @@
   "region": "APAC",
   "currency": "BDT",
   "language": "bn",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
+    "vat_gst": [
+      {
+        "id": "BD-VAT",
+        "title": "Bangladesh VAT — 15%",
+        "summary": "15% VAT; monthly returns to NBR.",
+        "status": "live",
+        "effective_date": "2019-07-01",
+        "source": "https://nbr.gov.bd/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [],
     "payroll": [],
     "local_gaap": [],

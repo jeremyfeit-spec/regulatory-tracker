@@ -4,11 +4,23 @@
   "region": "LATAM",
   "currency": "USD",
   "language": "es",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
     "vat_gst": [],
-    "e_invoicing": [],
+    "e_invoicing": [
+      {
+        "id": "EC-COMP-EL",
+        "title": "Ecuador electronic receipts",
+        "summary": "Mandatory electronic receipts via SRI for all taxpayers.",
+        "status": "live",
+        "effective_date": "2022-01-01",
+        "source": "https://www.sri.gob.ec/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []

@@ -4,25 +4,85 @@
   "region": "EMEA",
   "currency": "AED",
   "language": "ar",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
+    "tax_filing": [
+      {
+        "id": "AE-CIT-9PCT-2023",
+        "title": "UAE Corporate Tax — 9% from June 2023",
+        "summary": "Federal corporate tax 9% on profits above AED 375K introduced June 2023; annual filing.",
+        "status": "live",
+        "effective_date": "2023-06-01",
+        "source": "https://tax.gov.ae/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "AE-VAT-5PCT",
+        "title": "UAE VAT — 5% standard rate",
+        "summary": "5% VAT introduced 2018; quarterly/annual returns to Federal Tax Authority.",
+        "status": "live",
+        "effective_date": "2018-01-01",
+        "source": "https://tax.gov.ae/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
-        "id": "AE-EINV-2026",
-        "title": "UAE e-invoicing programme",
-        "summary": "Phase 1 of UAE e-invoicing scheduled for July 2026 — Peppol-based 5-corner model.",
+        "id": "AE-EINV-PHASE3-2026",
+        "title": "UAE e-invoicing Phase 3 (real-time clearance) by 2026",
+        "summary": "Phase 3 with real-time clearance, ZATCA-aligned model, PEPPOL-based 5-corner; targeted 2026.",
         "status": "upcoming",
         "effective_date": "2026-07-01",
         "source": "https://tax.gov.ae/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "payroll": [
+      {
+        "id": "AE-GPSSA",
+        "title": "GPSSA pension for UAE nationals only",
+        "summary": "No personal income tax; GPSSA pension contributions for UAE nationals only (~12.5% employer).",
+        "status": "live",
+        "effective_date": "1999-11-01",
+        "source": "https://gpssa.gov.ae/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "AE-IFRS-MAND",
+        "title": "IFRS mandatory",
+        "summary": "IFRS mandatory for all UAE entities subject to corporate tax.",
+        "status": "live",
+        "effective_date": "2023-06-01",
+        "source": "https://tax.gov.ae/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "AE-UAE-PASS-OB",
+        "title": "Open banking emerging + UAE Pass",
+        "summary": "Open banking framework emerging; UAE Pass digital identity for payments.",
+        "status": "in_progress",
+        "effective_date": "rolling",
+        "source": "https://www.centralbank.ae/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

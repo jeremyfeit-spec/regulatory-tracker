@@ -4,48 +4,84 @@
   "region": "APAC",
   "currency": "AUD",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [
       {
+        "id": "AU-INCOME-BAS",
+        "title": "Annual income tax + BAS for GST",
+        "summary": "Annual income tax return; Business Activity Statement (BAS) quarterly/monthly for GST and PAYG.",
+        "status": "live",
+        "effective_date": "2007-07-01",
+        "source": "https://www.ato.gov.au/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "AU-GST-10",
+        "title": "Australian GST — 10% quarterly/monthly BAS",
+        "summary": "10% GST; quarterly or monthly BAS to ATO.",
+        "status": "live",
+        "effective_date": "2000-07-01",
+        "source": "https://www.ato.gov.au/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "AU-PEPPOL-DEC2026",
+        "title": "PEPPOL mandatory for Commonwealth agencies by Dec 2026",
+        "summary": "All Commonwealth agencies must process Peppol e-invoices by Dec 2026; growing B2B PEPPOL voluntary adoption.",
+        "status": "upcoming",
+        "effective_date": "2026-12-01",
+        "source": "https://www.peppol.org/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "payroll": [
+      {
         "id": "AU-STP-PHASE2",
-        "title": "Single Touch Payroll Phase 2",
-        "summary": "Employers report expanded payroll data to ATO each pay run; Phase 2 fully in effect.",
+        "title": "Single Touch Payroll Phase 2 + Superannuation 11.5%",
+        "summary": "MEDIUM complexity: Superannuation 11.5% (rising to 12% Jul 2025); STP Phase 2 real-time reporting to ATO.",
         "status": "live",
         "effective_date": "2022-01-01",
         "source": "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "vat_gst": [],
-    "e_invoicing": [
+    "local_gaap": [
       {
-        "id": "AU-EINV-PEPPOL",
-        "title": "Peppol e-invoicing — government & B2B",
-        "summary": "All Commonwealth agencies must accept Peppol e-invoices.",
+        "id": "AU-AASB",
+        "title": "AASB standards (IFRS-aligned)",
+        "summary": "AASB standards substantially aligned with IFRS; some local divergences.",
         "status": "live",
-        "effective_date": "2022-07-01",
-        "source": "https://www.peppol.org/",
-        "source_type": "advisory",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "effective_date": "2005-01-01",
+        "source": "https://www.aasb.gov.au/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
     "banking_payments": [
       {
-        "id": "AU-CDR-OPEN-BANKING",
-        "title": "Consumer Data Right (Open Banking)",
-        "summary": "CDR rules continue to expand to non-bank lenders and energy.",
+        "id": "AU-CDR-NPP",
+        "title": "Consumer Data Right (CDR) + NPP instant payments",
+        "summary": "CDR open banking continues to expand to non-bank lenders/energy; New Payments Platform (NPP) for instant payments.",
         "status": "in_progress",
         "effective_date": "rolling",
         "source": "https://www.cdr.gov.au/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ]
   }

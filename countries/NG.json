@@ -4,13 +4,85 @@
   "region": "EMEA",
   "currency": "NGN",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
-    "e_invoicing": [],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "tax_filing": [
+      {
+        "id": "NG-CIT-MONTHLY",
+        "title": "Annual income tax + monthly VAT",
+        "summary": "Annual CIT; monthly VAT filings.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://www.firs.gov.ng/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "NG-VAT-7-5",
+        "title": "Nigeria VAT — 7.5%",
+        "summary": "7.5% VAT (raised from 5% in 2020); monthly returns to FIRS.",
+        "status": "live",
+        "effective_date": "2020-02-01",
+        "source": "https://www.firs.gov.ng/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "NG-MBS-2025",
+        "title": "Merchant Buyer Solution (MBS) — Aug 2025 (>5B NGN)",
+        "summary": "MBS e-invoicing emerging for taxpayers >5B NGN turnover from Aug 2025; phased expansion.",
+        "status": "upcoming",
+        "effective_date": "2025-08-01",
+        "source": "https://www.firs.gov.ng/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "NG-PENSION-NHF",
+        "title": "Pension (8%+10%) + NHF",
+        "summary": "MEDIUM: Pension Reform Act contributions (8% employee + 10% employer) + National Housing Fund.",
+        "status": "live",
+        "effective_date": "2014-07-01",
+        "source": "https://www.pencom.gov.ng/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "NG-IFRS-LISTED",
+        "title": "IFRS for listed; SAS for SMEs",
+        "summary": "IFRS mandatory for listed/public-interest entities; Statements of Accounting Standards for SMEs.",
+        "status": "live",
+        "effective_date": "2012-01-01",
+        "source": "https://nasb.gov.ng/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "NG-NIP-MOBILE",
+        "title": "NIP for instant payments + mobile money",
+        "summary": "NIBSS Instant Payments dominant; mobile money rapidly expanding.",
+        "status": "live",
+        "effective_date": "2011-07-01",
+        "source": "https://www.cbn.gov.ng/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

@@ -4,11 +4,23 @@
   "region": "APAC",
   "currency": "CNY",
   "language": "zh",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
     "vat_gst": [],
-    "e_invoicing": [],
+    "e_invoicing": [
+      {
+        "id": "CN-FULL-EINV",
+        "title": "China fully digitalised e-fapiao rollout",
+        "summary": "Phased nationwide rollout of fully digitalised e-fapiao; covering all provinces by 2026.",
+        "status": "in_progress",
+        "effective_date": "rolling",
+        "source": "https://www.chinatax.gov.cn/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []

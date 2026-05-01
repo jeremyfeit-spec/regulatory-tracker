@@ -4,10 +4,22 @@
   "region": "APAC",
   "currency": "PKR",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
+    "vat_gst": [
+      {
+        "id": "PK-GST",
+        "title": "Pakistan Sales Tax",
+        "summary": "17-18% Sales Tax; monthly returns to FBR.",
+        "status": "live",
+        "effective_date": "2010-01-01",
+        "source": "https://www.fbr.gov.pk/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [],
     "payroll": [],
     "local_gaap": [],

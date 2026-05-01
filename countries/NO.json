@@ -4,11 +4,35 @@
   "region": "EMEA",
   "currency": "NOK",
   "language": "no",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
-    "e_invoicing": [],
+    "vat_gst": [
+      {
+        "id": "NO-VAT",
+        "title": "Norwegian VAT (MVA)",
+        "summary": "Standard 25% / 15% / 12% rates. Bi-monthly returns to Skatteetaten.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://www.skatteetaten.no/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "NO-EHF-PEPPOL",
+        "title": "EHF / PEPPOL e-invoicing",
+        "summary": "All government bodies receive e-invoices via EHF/PEPPOL since 2012; B2B adoption strong.",
+        "status": "live",
+        "effective_date": "2012-07-01",
+        "source": "https://anskaffelser.no/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []

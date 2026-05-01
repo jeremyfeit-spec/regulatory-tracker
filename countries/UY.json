@@ -4,11 +4,23 @@
   "region": "LATAM",
   "currency": "UYU",
   "language": "es",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
     "vat_gst": [],
-    "e_invoicing": [],
+    "e_invoicing": [
+      {
+        "id": "UY-CFE",
+        "title": "Comprobante Fiscal Electrónico (CFE)",
+        "summary": "Mandatory CFE e-invoicing via DGI.",
+        "status": "live",
+        "effective_date": "2019-01-01",
+        "source": "https://www.dgi.gub.uy/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []

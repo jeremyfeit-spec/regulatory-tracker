@@ -4,25 +4,85 @@
   "region": "APAC",
   "currency": "IDR",
   "language": "id",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
+    "tax_filing": [
+      {
+        "id": "ID-CIT-VAT",
+        "title": "Annual corporate + monthly VAT",
+        "summary": "Annual CIT; monthly VAT (PPN) returns.",
+        "status": "live",
+        "effective_date": "2008-01-01",
+        "source": "https://www.pajak.go.id/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "ID-PPN-12",
+        "title": "Indonesia VAT (PPN) — 12% from 2025",
+        "summary": "12% VAT (raised from 11% Jan 2025); limited to luxury initially per latest regulation.",
+        "status": "live",
+        "effective_date": "2025-01-01",
+        "source": "https://www.pajak.go.id/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
         "id": "ID-EFAKTUR",
-        "title": "e-Faktur VAT invoice system",
-        "summary": "All VAT-registered businesses issue tax invoices via DJP e-Faktur.",
+        "title": "e-Faktur — limited mandate; digital services VAT expanding",
+        "summary": "All VAT-registered businesses issue tax invoices via DJP e-Faktur platform; digital services VAT expanding.",
         "status": "live",
         "effective_date": "2016-07-01",
         "source": "https://efaktur.pajak.go.id/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "payroll": [
+      {
+        "id": "ID-BPJS",
+        "title": "BPJS Health + Employment",
+        "summary": "MEDIUM complexity: BPJS Kesehatan (health) + BPJS Ketenagakerjaan (employment).",
+        "status": "live",
+        "effective_date": "2014-01-01",
+        "source": "https://www.bpjsketenagakerjaan.go.id/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "ID-PSAK-SAK",
+        "title": "Indonesian FAS (PSAK) — converging with IFRS",
+        "summary": "PSAK standards converging with IFRS.",
+        "status": "live",
+        "effective_date": "2012-01-01",
+        "source": "https://web.iaiglobal.or.id/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "ID-QRIS-BIFAST",
+        "title": "QRIS for QR payments + BI-FAST",
+        "summary": "QRIS national QR standard; BI-FAST for instant interbank.",
+        "status": "live",
+        "effective_date": "2021-12-21",
+        "source": "https://www.bi.go.id/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

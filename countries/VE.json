@@ -4,10 +4,22 @@
   "region": "LATAM",
   "currency": "VES",
   "language": "es",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
+    "vat_gst": [
+      {
+        "id": "VE-IVA",
+        "title": "Venezuelan IVA",
+        "summary": "16% IVA; monthly returns to SENIAT.",
+        "status": "live",
+        "effective_date": "2020-08-01",
+        "source": "http://www.seniat.gob.ve/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [],
     "payroll": [],
     "local_gaap": [],

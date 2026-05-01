@@ -4,21 +4,33 @@
   "region": "EMEA",
   "currency": "EUR",
   "language": "el",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
+    "vat_gst": [
+      {
+        "id": "GR-VAT",
+        "title": "Greek VAT — quarterly/monthly",
+        "summary": "Standard 24% / 13% / 6% rates.",
+        "status": "live",
+        "effective_date": "2016-06-01",
+        "source": "https://www.aade.gr/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
         "id": "GR-MYDATA",
         "title": "myDATA e-books platform",
-        "summary": "Real-time transmission of revenue/expense ledgers to AADE.",
+        "summary": "Real-time transmission of revenue/expense ledgers to AADE; phased mandate fully operational since 2021.",
         "status": "live",
         "effective_date": "2021-10-01",
         "source": "https://www.aade.gr/mydata",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "payroll": [],

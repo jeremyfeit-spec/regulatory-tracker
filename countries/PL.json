@@ -4,21 +4,33 @@
   "region": "EMEA",
   "currency": "PLN",
   "language": "pl",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
+    "vat_gst": [
+      {
+        "id": "PL-VAT-JPK",
+        "title": "Polish VAT + JPK_VAT SAF-T",
+        "summary": "Standard 23% / 8% / 5% rates. Monthly JPK_VAT (SAF-T VAT) filing.",
+        "status": "live",
+        "effective_date": "2018-01-01",
+        "source": "https://www.gov.pl/web/kas",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
         "id": "PL-KSEF-2026",
         "title": "KSeF mandatory B2B e-invoicing",
-        "summary": "KSeF mandatory for large taxpayers from Feb 2026 and all taxpayers from Apr 2026.",
+        "summary": "KSeF mandatory for large taxpayers from 1 Feb 2026; all taxpayers from 1 Apr 2026. Real-time clearance model.",
         "status": "upcoming",
         "effective_date": "2026-02-01",
         "source": "https://www.podatki.gov.pl/ksef/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "payroll": [],

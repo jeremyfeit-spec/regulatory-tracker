@@ -4,11 +4,35 @@
   "region": "EMEA",
   "currency": "EGP",
   "language": "ar",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
-    "e_invoicing": [],
+    "vat_gst": [
+      {
+        "id": "EG-VAT",
+        "title": "Egyptian VAT — 14%",
+        "summary": "14% VAT; monthly returns to Egyptian Tax Authority.",
+        "status": "live",
+        "effective_date": "2016-09-08",
+        "source": "https://www.eta.gov.eg/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "EG-EINV",
+        "title": "Egypt e-invoicing system",
+        "summary": "Mandatory e-invoicing for all VAT-registered businesses; phased rollout completed 2023.",
+        "status": "live",
+        "effective_date": "2023-12-15",
+        "source": "https://www.eta.gov.eg/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []

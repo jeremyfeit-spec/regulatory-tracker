@@ -4,25 +4,96 @@
   "region": "EMEA",
   "currency": "EUR",
   "language": "fr",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
+    "tax_filing": [
+      {
+        "id": "FR-CIT-ANNUAL",
+        "title": "Annual corporate tax (IS) + monthly advance payments",
+        "summary": "Corporate income tax filed annually with monthly advance payments (acomptes); standard rate 25%.",
+        "status": "live",
+        "effective_date": "2022-01-01",
+        "source": "https://www.impots.gouv.fr/professionnel/limpot-sur-les-societes",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "FR-GREFFE",
+        "title": "Annual filing to Greffe du Tribunal de Commerce",
+        "summary": "All registered companies must file annual accounts with the commercial court registry.",
+        "status": "live",
+        "effective_date": "1985-01-01",
+        "source": "https://www.infogreffe.fr/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "FR-VAT-MONTHLY",
+        "title": "French VAT — monthly/quarterly returns",
+        "summary": "Standard 20% / 10% / 5.5% rates. Monthly returns for businesses above thresholds; quarterly for others. CA3 form via impots.gouv.fr.",
+        "status": "live",
+        "effective_date": "1968-01-01",
+        "source": "https://www.impots.gouv.fr/professionnel/tva",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
         "id": "FR-EINV-PPF-2026",
-        "title": "France B2B e-invoicing & e-reporting mandate",
-        "summary": "Phased B2B e-invoicing via PDPs. Receiving capability mandatory for all from Sep 2026; issuance phased through 2026-2027.",
+        "title": "France B2B e-invoicing — Sep 2026 (large) / Sep 2027 (all)",
+        "summary": "Mandatory B2B e-invoicing via Plateformes de Dématérialisation Partenaires (PDP). Receiving capability + large-enterprise issuance Sep 2026; all enterprises Sep 2027. Factur-X / UBL 2.1 / CII via Chorus Pro.",
         "status": "upcoming",
         "effective_date": "2026-09-01",
         "source": "https://www.impots.gouv.fr/portail/professionnel/facturation-electronique",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "payroll": [
+      {
+        "id": "FR-URSSAF-DSN",
+        "title": "URSSAF / DSN monthly social filings",
+        "summary": "EXTREME complexity: ~43% employer social contributions including pension, unemployment, transport, training, housing levies. Monthly DSN (Déclaration Sociale Nominative) filing.",
+        "status": "live",
+        "effective_date": "2017-01-01",
+        "source": "https://www.urssaf.fr/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "FR-PCG",
+        "title": "Plan Comptable Général (PCG) — mandatory chart of accounts",
+        "summary": "Mandatory 1-9 class structure; all French businesses must use PCG. Significant divergence from IFRS; SMBs use PCG for statutory accounts.",
+        "status": "live",
+        "effective_date": "1982-01-01",
+        "source": "https://www.anc.gouv.fr/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "FR-PSD2-SEPA",
+        "title": "PSD2 + SEPA + strong open banking",
+        "summary": "PSD2 open banking APIs across French banks; SEPA Credit Transfer/Direct Debit/Instant. Strong aggregator market (TrueLayer, Tink, Salt Edge).",
+        "status": "live",
+        "effective_date": "2018-01-13",
+        "source": "https://www.banque-france.fr/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

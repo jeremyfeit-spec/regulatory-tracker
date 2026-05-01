@@ -4,13 +4,37 @@
   "region": "EMEA",
   "currency": "DKK",
   "language": "da",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
+    "vat_gst": [
+      {
+        "id": "DK-VAT",
+        "title": "Danish VAT (moms) — quarterly/monthly",
+        "summary": "Standard 25% rate (no reduced rates).",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://skat.dk/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [],
     "payroll": [],
-    "local_gaap": [],
+    "local_gaap": [
+      {
+        "id": "DK-BOOKKEEPING-ACT",
+        "title": "Bookkeeping Act 2024 — digital bookkeeping",
+        "summary": "New Bookkeeping Act requires registered digital bookkeeping systems with backup; phased rollout 2024-2026.",
+        "status": "in_progress",
+        "effective_date": "2024-07-01",
+        "source": "https://erhvervsstyrelsen.dk/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "banking_payments": []
   }
 }

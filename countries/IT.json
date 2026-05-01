@@ -4,25 +4,85 @@
   "region": "EMEA",
   "currency": "EUR",
   "language": "it",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
+    "tax_filing": [
+      {
+        "id": "IT-IRES-IRAP",
+        "title": "Annual IRES + IRAP returns",
+        "summary": "Corporate income tax (IRES 24%) + regional production tax (IRAP ~3.9%). Quarterly VAT liquidation.",
+        "status": "live",
+        "effective_date": "2008-01-01",
+        "source": "https://www.agenziaentrate.gov.it/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "IT-VAT-LIPE",
+        "title": "Italian VAT — monthly/quarterly LIPE",
+        "summary": "Standard 22% / 10% / 4% rates. Monthly or quarterly returns plus LIPE quarterly liquidation report.",
+        "status": "live",
+        "effective_date": "2017-01-01",
+        "source": "https://www.agenziaentrate.gov.it/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
         "id": "IT-FATTURAPA-2019",
-        "title": "FatturaPA — universal e-invoicing via SDI",
-        "summary": "All B2B, B2C, B2G invoices in FatturaPA XML through SDI.",
+        "title": "FatturaPA — universal e-invoicing via SDI (clearance model)",
+        "summary": "All B2B, B2C, B2G invoices in FatturaPA XML through Sistema di Interscambio. Clearance model — invoice not legally valid until SDI accepts.",
         "status": "live",
         "effective_date": "2019-01-01",
         "source": "https://www.fatturapa.gov.it/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "payroll": [
+      {
+        "id": "IT-INPS-TFR",
+        "title": "INPS contributions + TFR severance",
+        "summary": "HIGH (~30% employer): INPS social security, TFR mandatory severance fund (1/13.5 of annual salary), regional taxes.",
+        "status": "live",
+        "effective_date": "1996-01-01",
+        "source": "https://www.inps.it/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "IT-OIC",
+        "title": "Italian GAAP (OIC standards)",
+        "summary": "No mandatory CoA but OIC accounting principles require specific account treatments; goodwill must be amortised (differs from IFRS).",
+        "status": "live",
+        "effective_date": "2001-01-01",
+        "source": "https://www.fondazioneoic.eu/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "IT-PSD2-PAGOPA",
+        "title": "PSD2 + SEPA + PagoPA for government payments",
+        "summary": "PSD2 open banking + SEPA. PagoPA is the mandatory platform for all payments to public administration.",
+        "status": "live",
+        "effective_date": "2018-01-13",
+        "source": "https://www.pagopa.gov.it/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

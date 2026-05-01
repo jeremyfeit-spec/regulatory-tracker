@@ -4,13 +4,96 @@
   "region": "EMEA",
   "currency": "EUR",
   "language": "nl",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
-    "e_invoicing": [],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "tax_filing": [
+      {
+        "id": "NL-CIT-VPB",
+        "title": "Annual corporate tax (Vpb) + quarterly VAT",
+        "summary": "Vennootschapsbelasting filed annually; VAT quarterly. Filed via Belastingdienst portal.",
+        "status": "live",
+        "effective_date": "2008-01-01",
+        "source": "https://www.belastingdienst.nl/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "NL-VAT-QUARTERLY",
+        "title": "Dutch VAT — quarterly returns",
+        "summary": "Standard 21% / reduced 9% rates. Quarterly returns; monthly for very large taxpayers.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://www.belastingdienst.nl/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "NL-EINV-B2G-2017",
+        "title": "B2G e-invoicing via PEPPOL",
+        "summary": "All Dutch government agencies receive e-invoices via PEPPOL since 2017. Post-audit model.",
+        "status": "live",
+        "effective_date": "2017-01-01",
+        "source": "https://www.peppol.eu/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "NL-EINV-B2B-2026",
+        "title": "Netherlands B2B e-invoicing draft legislation Q4 2026",
+        "summary": "Draft legislation for B2B e-invoicing expected Q4 2026 ahead of EU ViDA July 2030 alignment.",
+        "status": "monitoring",
+        "effective_date": "2026-Q4",
+        "source": "https://www.belastingdienst.nl/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "NL-PAYROLL-MED",
+        "title": "Dutch payroll — social premiums + pension",
+        "summary": "MEDIUM complexity: social premiums + occupational pension; quarterly payroll tax filings.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://www.belastingdienst.nl/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "NL-DUTCH-GAAP",
+        "title": "Dutch GAAP (RJ) or IFRS",
+        "summary": "SMBs use Dutch GAAP (Raad voor de Jaarverslaggeving); listed entities IFRS.",
+        "status": "live",
+        "effective_date": "2005-01-01",
+        "source": "https://www.rjnet.nl/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "NL-PSD2-IDEAL",
+        "title": "PSD2 + SEPA + iDEAL dominant",
+        "summary": "PSD2 open banking + SEPA. iDEAL is dominant for online B2C payments; expanding to European Payment Initiative (Wero).",
+        "status": "live",
+        "effective_date": "2018-01-13",
+        "source": "https://www.dnb.nl/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

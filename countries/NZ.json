@@ -4,25 +4,85 @@
   "region": "APAC",
   "currency": "NZD",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
-    "e_invoicing": [
+    "tax_filing": [
       {
-        "id": "NZ-PEPPOL-GOV",
-        "title": "Government e-invoicing capability",
-        "summary": "All government agencies must be able to receive Peppol e-invoices.",
+        "id": "NZ-IT",
+        "title": "Annual income tax + GST returns",
+        "summary": "Annual income tax; GST returns 2 or 6-monthly.",
         "status": "live",
-        "effective_date": "2022-03-31",
-        "source": "https://www.einvoicing.govt.nz/",
+        "effective_date": "2007-04-01",
+        "source": "https://www.ird.govt.nz/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "vat_gst": [
+      {
+        "id": "NZ-GST-15",
+        "title": "NZ GST — 15% bi-monthly returns",
+        "summary": "15% GST; bi-monthly or 6-monthly returns to IRD.",
+        "status": "live",
+        "effective_date": "2010-10-01",
+        "source": "https://www.ird.govt.nz/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "NZ-PEPPOL-GOV-2026",
+        "title": "PEPPOL voluntary; govt agencies from Jan 2026",
+        "summary": "All government agencies must accept PEPPOL e-invoices from Jan 2026; B2B voluntary.",
+        "status": "upcoming",
+        "effective_date": "2026-01-01",
+        "source": "https://www.einvoicing.govt.nz/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "NZ-KIWISAVER",
+        "title": "KiwiSaver minimum 3% employer",
+        "summary": "LOW complexity: KiwiSaver pension 3% employer minimum; PAYE on each pay.",
+        "status": "live",
+        "effective_date": "2007-07-01",
+        "source": "https://www.kiwisaver.govt.nz/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "NZ-NZ-IFRS",
+        "title": "NZ IFRS",
+        "summary": "NZ IFRS — substantially aligned with IFRS.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://www.xrb.govt.nz/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "NZ-OB-EMERGING",
+        "title": "Open banking emerging",
+        "summary": "Payments NZ API Centre standards; open banking emerging.",
+        "status": "in_progress",
+        "effective_date": "rolling",
+        "source": "https://www.paymentsnz.co.nz/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

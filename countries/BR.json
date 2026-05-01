@@ -4,37 +4,96 @@
   "region": "LATAM",
   "currency": "BRL",
   "language": "pt",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
+    "tax_filing": [
+      {
+        "id": "BR-SPED-ECD-ECF",
+        "title": "SPED ecosystem (ECD / ECF / EFD); monthly obligations",
+        "summary": "SPED Contábil (ECD), SPED Fiscal (ECF), EFD-Contribuições; monthly digital obligations.",
+        "status": "live",
+        "effective_date": "2008-01-01",
+        "source": "https://www.gov.br/receitafederal/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "vat_gst": [
       {
-        "id": "BR-TAX-REFORM-2026",
-        "title": "Brazil indirect tax reform (CBS/IBS)",
-        "summary": "Constitutional tax reform replaces PIS/COFINS/ICMS/ISS with CBS and IBS; phased 2026-2033.",
+        "id": "BR-INDIRECT-CASCADE",
+        "title": "EXTREME: ICMS / IPI / PIS / COFINS / ISS — cascading taxes",
+        "summary": "EXTREME complexity: 5+ overlapping indirect tax regimes (state ICMS, federal IPI/PIS/COFINS, municipal ISS); cascading and partly non-creditable.",
+        "status": "live",
+        "effective_date": "2003-01-01",
+        "source": "https://www.gov.br/receitafederal/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "BR-TAX-REFORM-CBS-IBS",
+        "title": "Brazil indirect tax reform (CBS/IBS) — phased 2026-2033",
+        "summary": "Constitutional tax reform replaces PIS/COFINS/ICMS/ISS with CBS (federal) and IBS (state/municipal); test phase 2026, full transition through 2033.",
         "status": "upcoming",
         "effective_date": "2026-01-01",
         "source": "https://www.gov.br/fazenda/pt-br/assuntos/reforma-tributaria",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "e_invoicing": [
       {
-        "id": "BR-NFE",
-        "title": "NF-e / NFS-e electronic invoicing",
-        "summary": "Universal NF-e for goods; new national NFS-e standard rolling out for services.",
+        "id": "BR-NFE-NFSE",
+        "title": "NF-e / NFS-e via SEFAZ — clearance model since 2006",
+        "summary": "Universal NF-e for goods; new national NFS-e standard rolling out for services. Real-time clearance — invoice not legally valid until SEFAZ accepts.",
         "status": "live",
         "effective_date": "2008-04-01",
         "source": "https://www.nfe.fazenda.gov.br/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "payroll": [
+      {
+        "id": "BR-INSS-FGTS-ESOCIAL",
+        "title": "EXTREME: INSS + FGTS + 13th salary + eSocial",
+        "summary": "EXTREME complexity: INSS social security (20%) + FGTS (8%) + mandatory 13th-month salary + eSocial real-time payroll reporting; ~35% employer burden.",
+        "status": "live",
+        "effective_date": "2018-01-08",
+        "source": "https://www.gov.br/esocial/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "BR-CPC-IFRS",
+        "title": "Brazilian GAAP (CPC) aligned with IFRS",
+        "summary": "CPC (Comitê de Pronunciamentos Contábeis) standards aligned with IFRS; tax CoA used for SPED.",
+        "status": "live",
+        "effective_date": "2010-01-01",
+        "source": "https://www.cpc.org.br/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "BR-PIX-OPEN-FINANCE",
+        "title": "PIX instant payments + Open Finance Brazil (Phase 4)",
+        "summary": "PIX dominant for real-time payments since 2020; Open Finance Brazil now in Phase 4 with payment initiation.",
+        "status": "live",
+        "effective_date": "2020-11-16",
+        "source": "https://www.bcb.gov.br/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

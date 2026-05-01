@@ -4,13 +4,61 @@
   "region": "EMEA",
   "currency": "EUR",
   "language": "nl",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
-    "e_invoicing": [],
+    "tax_filing": [
+      {
+        "id": "BE-CIT",
+        "title": "Annual corporate tax (Impôt des sociétés)",
+        "summary": "Annual return; corporate rate 25% (20% small enterprise rate on first €100K).",
+        "status": "live",
+        "effective_date": "2018-01-01",
+        "source": "https://finance.belgium.be/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "BE-VAT-MONTHLY",
+        "title": "Belgian VAT — monthly/quarterly returns",
+        "summary": "Standard 21% / 12% / 6% rates. Monthly above threshold; quarterly otherwise. Intervat portal.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://finance.belgium.be/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "BE-EINV-2026",
+        "title": "Belgium B2B e-invoicing — Jan 2026",
+        "summary": "Mandatory structured B2B e-invoicing via PEPPOL from 1 January 2026.",
+        "status": "upcoming",
+        "effective_date": "2026-01-01",
+        "source": "https://finance.belgium.be/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
-    "banking_payments": []
+    "banking_payments": [
+      {
+        "id": "BE-PSD2-SEPA",
+        "title": "PSD2 + SEPA + Bancontact",
+        "summary": "PSD2 open banking, SEPA rails. Bancontact dominant for Belgian payments.",
+        "status": "live",
+        "effective_date": "2018-01-13",
+        "source": "https://www.nbb.be/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

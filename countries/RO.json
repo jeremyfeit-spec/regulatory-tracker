@@ -4,21 +4,33 @@
   "region": "EMEA",
   "currency": "RON",
   "language": "ro",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
-    "vat_gst": [],
+    "vat_gst": [
+      {
+        "id": "RO-VAT",
+        "title": "Romanian VAT — monthly/quarterly",
+        "summary": "Standard 19% / 9% / 5% rates.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://www.anaf.ro/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
         "id": "RO-EFACTURA-2024",
         "title": "RO e-Factura B2B mandate",
-        "summary": "Mandatory B2B e-invoicing through RO e-Factura platform since July 2024.",
+        "summary": "Mandatory B2B e-invoicing through RO e-Factura platform since July 2024. Real-time clearance.",
         "status": "live",
         "effective_date": "2024-07-01",
         "source": "https://www.anaf.ro/anaf/internet/ANAF/servicii_online/e-factura/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
     "payroll": [],

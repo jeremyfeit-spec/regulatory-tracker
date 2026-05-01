@@ -4,25 +4,129 @@
   "region": "EMEA",
   "currency": "EUR",
   "language": "de",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
+    "tax_filing": [
+      {
+        "id": "DE-CIT-ANNUAL",
+        "title": "Annual corporate tax (Körperschaftsteuer)",
+        "summary": "Annual return via ELSTER; corporate rate 15% + 5.5% solidarity surcharge + trade tax. Mandatory E-Bilanz electronic balance sheet to tax authority.",
+        "status": "live",
+        "effective_date": "2013-01-01",
+        "source": "https://www.elster.de/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "DE-EBILANZ",
+        "title": "E-Bilanz (electronic balance sheet)",
+        "summary": "All commercial enterprises must submit electronic balance sheet via ELSTER per §5b EStG.",
+        "status": "live",
+        "effective_date": "2013-01-01",
+        "source": "https://www.bzst.de/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "DE-JAHRESABSCHLUSS",
+        "title": "Jahresabschluss (annual accounts) filing",
+        "summary": "Annual financial statements filed with Bundesanzeiger; size-based disclosure rules per HGB §325.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://www.bundesanzeiger.de/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "DE-VAT-MONTHLY",
+        "title": "German VAT — monthly/quarterly returns",
+        "summary": "Standard 19% / reduced 7% rates. Monthly returns for higher-volume; quarterly otherwise. Filed via ELSTER.",
+        "status": "live",
+        "effective_date": "2007-01-01",
+        "source": "https://www.bzst.de/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "e_invoicing": [
       {
-        "id": "DE-EINV-2025",
-        "title": "Germany B2B e-invoicing (Wachstumschancengesetz)",
-        "summary": "From 1 Jan 2025 all German B2B businesses must be able to receive structured e-invoices. Issuance mandatory from 2027 (2028 small businesses).",
+        "id": "DE-EINV-RECEIVE-2025",
+        "title": "Germany B2B e-invoicing — receiving capability mandatory",
+        "summary": "From 1 Jan 2025 all German B2B businesses must be able to receive structured e-invoices (XRechnung / ZUGFeRD / PEPPOL). Wachstumschancengesetz.",
         "status": "live",
         "effective_date": "2025-01-01",
         "source": "https://www.bundesfinanzministerium.de/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "DE-EINV-SEND-800K-2027",
+        "title": "Germany e-invoicing sending mandatory >€800K",
+        "summary": "Issuance of structured e-invoices mandatory for businesses with annual revenue >€800K from 1 Jan 2027.",
+        "status": "upcoming",
+        "effective_date": "2027-01-01",
+        "source": "https://www.bundesfinanzministerium.de/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "DE-EINV-SEND-ALL-2028",
+        "title": "Germany e-invoicing sending mandatory — all businesses",
+        "summary": "Issuance mandatory for ALL B2B regardless of size from 1 Jan 2028.",
+        "status": "upcoming",
+        "effective_date": "2028-01-01",
+        "source": "https://www.bundesfinanzministerium.de/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "payroll": [
+      {
+        "id": "DE-PAYROLL-HIGH",
+        "title": "German payroll — ~21% employer social burden",
+        "summary": "Social security, health, pension, unemployment, long-term care contributions. ELSTER reporting. HIGH complexity. Strong DATEV ecosystem for accountants.",
+        "status": "live",
+        "effective_date": "2003-01-01",
+        "source": "https://www.elster.de/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "DE-HGB",
+        "title": "Handelsgesetzbuch (HGB) — German local GAAP",
+        "summary": "HGB is local GAAP for unconsolidated/SMB statutory accounts; differs significantly from IFRS. Standardkontenrahmen (SKR 03/04) chart of accounts universally expected (DATEV).",
+        "status": "live",
+        "effective_date": "1897-01-01",
+        "source": "https://www.gesetze-im-internet.de/hgb/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "DE-PSD2-SEPA-DATEV",
+        "title": "PSD2 + SEPA + DATEV bank integration",
+        "summary": "PSD2 open banking + SEPA rails. DATEV bank-feed integration is critical for the German accountant channel.",
+        "status": "live",
+        "effective_date": "2018-01-13",
+        "source": "https://www.bafin.de/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

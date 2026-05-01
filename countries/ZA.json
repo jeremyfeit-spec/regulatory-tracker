@@ -4,25 +4,85 @@
   "region": "EMEA",
   "currency": "ZAR",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [
       {
-        "id": "ZA-SARS-EFILING",
-        "title": "SARS eFiling continues mandatory for VAT/PAYE/CIT",
+        "id": "ZA-EFILING",
+        "title": "Annual income tax + bi-monthly VAT via SARS eFiling",
         "summary": "All registered businesses file via SARS eFiling.",
         "status": "live",
         "effective_date": "2006-01-01",
         "source": "https://www.sars.gov.za/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "vat_gst": [],
-    "e_invoicing": [],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "vat_gst": [
+      {
+        "id": "ZA-VAT-15PCT",
+        "title": "South Africa VAT — 15% standard rate",
+        "summary": "15% VAT; bi-monthly returns to SARS via eFiling.",
+        "status": "live",
+        "effective_date": "2018-04-01",
+        "source": "https://www.sars.gov.za/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "ZA-PEPPOL-2028",
+        "title": "Proposed e-invoicing 2028 — SARS Central Tax Hub via PEPPOL",
+        "summary": "SARS plans to launch Central Tax Hub e-invoicing via PEPPOL in 2028.",
+        "status": "monitoring",
+        "effective_date": "2028-01-01",
+        "source": "https://www.sars.gov.za/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "ZA-UIF-SDL-PAYE",
+        "title": "UIF + SDL + PAYE",
+        "summary": "MEDIUM complexity: UIF unemployment + Skills Development Levy + PAYE; monthly EMP201.",
+        "status": "live",
+        "effective_date": "2002-04-01",
+        "source": "https://www.sars.gov.za/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "ZA-IFRS-SA-GAAP",
+        "title": "IFRS for listed; SA GAAP / IFRS for SMEs otherwise",
+        "summary": "IFRS mandatory for listed; IFRS for SMEs typical for private companies.",
+        "status": "live",
+        "effective_date": "2005-01-01",
+        "source": "https://www.saica.co.za/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "ZA-RTC",
+        "title": "Real-time clearing + strong banking infrastructure",
+        "summary": "BankservAfrica RTC for real-time clearing; PayShap rolled out 2023.",
+        "status": "live",
+        "effective_date": "2023-03-13",
+        "source": "https://www.payshap.co.za/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

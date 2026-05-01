@@ -4,11 +4,47 @@
   "region": "EMEA",
   "currency": "EUR",
   "language": "en",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
-    "e_invoicing": [],
+    "tax_filing": [
+      {
+        "id": "IE-CT1",
+        "title": "Annual Corporation Tax (CT1)",
+        "summary": "Form CT1 annual return; corporate rate 12.5% (trading) / 25% (passive).",
+        "status": "live",
+        "effective_date": "2008-01-01",
+        "source": "https://www.revenue.ie/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "vat_gst": [
+      {
+        "id": "IE-VAT",
+        "title": "Irish VAT — bi-monthly returns",
+        "summary": "Standard 23% / 13.5% / 9% / 0% rates. Bi-monthly returns to Revenue.",
+        "status": "live",
+        "effective_date": "2012-01-01",
+        "source": "https://www.revenue.ie/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "IE-EINV-PEPPOL",
+        "title": "PEPPOL B2G + voluntary B2B",
+        "summary": "Government B2G PEPPOL receipt; voluntary B2B adoption.",
+        "status": "live",
+        "effective_date": "2019-04-01",
+        "source": "https://www.peppol.eu/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []

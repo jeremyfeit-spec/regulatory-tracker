@@ -4,11 +4,23 @@
   "region": "APAC",
   "currency": "VND",
   "language": "vi",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
     "vat_gst": [],
-    "e_invoicing": [],
+    "e_invoicing": [
+      {
+        "id": "VN-EINV-2022",
+        "title": "Vietnam e-invoicing mandatory",
+        "summary": "Mandatory e-invoicing via GDT for all businesses since 1 July 2022.",
+        "status": "live",
+        "effective_date": "2022-07-01",
+        "source": "https://www.gdt.gov.vn/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []

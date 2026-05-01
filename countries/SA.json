@@ -4,25 +4,85 @@
   "region": "EMEA",
   "currency": "SAR",
   "language": "ar",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
-    "vat_gst": [],
-    "e_invoicing": [
+    "tax_filing": [
       {
-        "id": "SA-FATOORA-W2",
-        "title": "ZATCA FATOORA Phase 2 integration waves",
-        "summary": "Continuing waves of taxpayer integration with FATOORA platform.",
-        "status": "in_progress",
-        "effective_date": "rolling",
-        "source": "https://zatca.gov.sa/en/E-Invoicing/",
+        "id": "SA-ZAKAT",
+        "title": "Quarterly VAT + Annual Zakat/income tax",
+        "summary": "Quarterly VAT returns; annual Zakat (Saudi/GCC) or income tax (foreign) returns.",
+        "status": "live",
+        "effective_date": "2018-01-01",
+        "source": "https://zatca.gov.sa/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "vat_gst": [
+      {
+        "id": "SA-VAT-15PCT",
+        "title": "Saudi VAT — 15% standard rate",
+        "summary": "15% VAT (raised from 5% in Jul 2020); quarterly returns to ZATCA.",
+        "status": "live",
+        "effective_date": "2020-07-01",
+        "source": "https://zatca.gov.sa/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
+      {
+        "id": "SA-FATOORA-PHASE2",
+        "title": "ZATCA FATOORA Phase 2 — real-time clearance + QR + cryptographic stamp",
+        "summary": "Real-time clearance model with mandatory QR code and crypto stamp; rolling waves of taxpayer integration.",
+        "status": "in_progress",
+        "effective_date": "2023-01-01",
+        "source": "https://zatca.gov.sa/en/E-Invoicing/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "payroll": [
+      {
+        "id": "SA-GOSI",
+        "title": "GOSI contributions ~12%",
+        "summary": "Low complexity: GOSI social insurance ~12% employer; no personal income tax for residents.",
+        "status": "live",
+        "effective_date": "2001-01-01",
+        "source": "https://www.gosi.gov.sa/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "SA-SOCPA-IFRS",
+        "title": "IFRS mandatory (SOCPA)",
+        "summary": "IFRS mandatory under SOCPA framework.",
+        "status": "live",
+        "effective_date": "2017-01-01",
+        "source": "https://socpa.org.sa/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "SA-SARIE-MADA",
+        "title": "SARIE real-time + mada payments",
+        "summary": "SARIE real-time gross settlement; mada is dominant card scheme.",
+        "status": "live",
+        "effective_date": "2019-01-01",
+        "source": "https://www.sama.gov.sa/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

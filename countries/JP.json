@@ -4,25 +4,96 @@
   "region": "APAC",
   "currency": "JPY",
   "language": "ja",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
-    "tax_filing": [],
+    "tax_filing": [
+      {
+        "id": "JP-CIT-CTAX",
+        "title": "Annual corporate tax + consumption tax return",
+        "summary": "Annual corporate tax + consumption tax filings to NTA.",
+        "status": "live",
+        "effective_date": "2014-04-01",
+        "source": "https://www.nta.go.jp/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "vat_gst": [
+      {
+        "id": "JP-JCT-10",
+        "title": "Japanese Consumption Tax — 10%",
+        "summary": "10% JCT (8% reduced for food/non-alcoholic beverages); annual return.",
+        "status": "live",
+        "effective_date": "2019-10-01",
+        "source": "https://www.nta.go.jp/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "e_invoicing": [
       {
         "id": "JP-QIS-2023",
         "title": "Qualified Invoice System (QIS)",
-        "summary": "Consumption tax qualified invoice system since Oct 2023.",
+        "summary": "Qualified invoice system in effect since Oct 2023; impacts JCT credit eligibility.",
         "status": "live",
         "effective_date": "2023-10-01",
         "source": "https://www.nta.go.jp/",
         "source_type": "official",
-        "first_seen": "2026-05-01T02:15:36Z",
-        "last_updated": "2026-05-01T02:15:36Z"
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      },
+      {
+        "id": "JP-PEPPOL-PINT-2025",
+        "title": "Voluntary PEPPOL PINT v1.1.1 from May 2025",
+        "summary": "Voluntary PEPPOL PINT v1.1.1 specification adoption from May 2025.",
+        "status": "upcoming",
+        "effective_date": "2025-05-01",
+        "source": "https://www.peppol.org/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
       }
     ],
-    "e_invoicing": [],
-    "payroll": [],
-    "local_gaap": [],
-    "banking_payments": []
+    "payroll": [
+      {
+        "id": "JP-SHARED-INS",
+        "title": "Shared employer/employee insurance ~15%",
+        "summary": "MEDIUM: Health, pension, employment, workers' comp insurance — shared between employer and employee.",
+        "status": "live",
+        "effective_date": "2003-04-01",
+        "source": "https://www.mhlw.go.jp/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "local_gaap": [
+      {
+        "id": "JP-JGAAP",
+        "title": "JGAAP (Japanese GAAP)",
+        "summary": "JGAAP required for unconsolidated; IFRS optional for consolidated. JGAAP differs significantly from IFRS.",
+        "status": "live",
+        "effective_date": "1949-01-01",
+        "source": "https://www.asb.or.jp/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
+    "banking_payments": [
+      {
+        "id": "JP-ZENGIN",
+        "title": "Zengin system + cashless growth",
+        "summary": "Zengin clearing system; cashless payments (QR/IC card) growing rapidly under MOF initiative.",
+        "status": "live",
+        "effective_date": "1973-04-01",
+        "source": "https://www.boj.or.jp/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ]
   }
 }

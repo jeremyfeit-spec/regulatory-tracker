@@ -4,11 +4,23 @@
   "region": "LATAM",
   "currency": "CRC",
   "language": "es",
-  "last_synced": "2026-05-01T02:15:36Z",
+  "last_synced": "2026-05-01T04:02:40Z",
   "compliance": {
     "tax_filing": [],
     "vat_gst": [],
-    "e_invoicing": [],
+    "e_invoicing": [
+      {
+        "id": "CR-FE",
+        "title": "Costa Rica Comprobante Electrónico",
+        "summary": "Mandatory e-invoicing via Hacienda for all taxpayers.",
+        "status": "live",
+        "effective_date": "2018-01-15",
+        "source": "https://www.hacienda.go.cr/",
+        "source_type": "official",
+        "first_seen": "2026-05-01T04:02:40Z",
+        "last_updated": "2026-05-01T04:02:40Z"
+      }
+    ],
     "payroll": [],
     "local_gaap": [],
     "banking_payments": []
