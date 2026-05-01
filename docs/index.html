@@ -19,14 +19,18 @@
     --brand-soft: #eff6ff;
     --green: #15803d;
     --green-soft: #dcfce7;
+    --green-dot: #22c55e;
     --amber: #b45309;
     --amber-soft: #fef3c7;
+    --amber-dot: #f59e0b;
+    --blue-dot: #3b82f6;
+    --blue-soft: #dbeafe;
     --red: #b91c1c;
     --red-soft: #fee2e2;
     --slate: #475569;
     --slate-soft: #f1f5f9;
+    --slate-dot: #94a3b8;
     --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
-    --shadow-md: 0 4px 16px rgba(15,23,42,.06), 0 1px 3px rgba(15,23,42,.05);
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -50,9 +54,9 @@
   .topbar h1 { margin: 0; font-size: 17px; font-weight: 700; color: var(--brand); letter-spacing: -.01em; }
   .topbar .sub { color: var(--muted); font-size: 13px; }
   .topbar .right { margin-left: auto; display: flex; gap: 16px; align-items: center; color: var(--muted); font-size: 12px; }
-  .topbar .right .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px var(--green-soft); }
+  .topbar .right .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green-dot); box-shadow: 0 0 0 3px var(--green-soft); }
 
-  .wrap { max-width: 1400px; margin: 0 auto; padding: 24px 28px 60px; }
+  .wrap { max-width: 1500px; margin: 0 auto; padding: 24px 28px 60px; }
 
   /* Stat strip */
   .stats {
@@ -80,7 +84,7 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 14px 16px;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     box-shadow: var(--shadow-sm);
     display: flex; flex-direction: column; gap: 10px;
   }
@@ -102,7 +106,6 @@
   .chip.active { background: var(--brand); color: #fff; border-color: var(--brand); }
   .chip .count { opacity: .65; margin-left: 4px; font-variant-numeric: tabular-nums; font-weight: 400; }
   .chip.active .count { opacity: .9; }
-
   .search {
     flex: 1 1 220px; max-width: 360px;
     border: 1px solid var(--border);
@@ -119,25 +122,33 @@
   }
   .clear-btn:hover { background: var(--slate-soft); color: var(--ink); }
 
-  /* Table */
+  /* Section header */
+  .section-title {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin: 4px 4px 10px;
+  }
+  .section-title h2 {
+    margin: 0; font-size: 15px; font-weight: 700; color: var(--ink);
+    letter-spacing: -.005em;
+  }
+  .section-title .meta { font-size: 12.5px; color: var(--muted); }
+  .section-title .meta strong { color: var(--ink); font-weight: 600; }
+
+  /* Table base */
   .table-wrap {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
+    margin-bottom: 24px;
   }
-  .table-meta {
-    display: flex; align-items: baseline; gap: 12px;
-    padding: 12px 18px; border-bottom: 1px solid var(--border);
-    font-size: 12.5px; color: var(--muted);
-  }
-  .table-meta strong { color: var(--ink); font-weight: 600; }
-
+  /* Country matrix scrollable area: ~10 rows visible */
+  .matrix-scroll { max-height: 460px; overflow: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   thead th {
     text-align: left;
-    padding: 10px 14px;
+    padding: 10px 12px;
     background: var(--slate-soft);
     color: var(--slate);
     font-weight: 600;
@@ -148,23 +159,47 @@
     cursor: pointer;
     user-select: none;
     white-space: nowrap;
+    position: sticky; top: 0; z-index: 1;
   }
   thead th .sort-arrow { color: var(--muted-2); margin-left: 4px; font-size: 11px; }
   thead th.sorted-asc .sort-arrow,
   thead th.sorted-desc .sort-arrow { color: var(--brand); }
-  tbody td { padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  thead th.no-sort { cursor: default; }
+  tbody td { padding: 11px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
   tbody tr:hover { background: #fafbfd; }
   tbody tr:last-child td { border-bottom: none; }
 
+  /* Country row formatting */
   td.country { white-space: nowrap; font-weight: 600; }
   td.country .iso { color: var(--muted); font-weight: 400; font-size: 11px; margin-left: 6px; font-variant-numeric: tabular-nums; }
   td.region { color: var(--slate); font-size: 12px; white-space: nowrap; }
-  td.job { white-space: nowrap; color: var(--ink-soft); }
+  td.bucket-cell { text-align: center; padding: 6px; }
+  .bucket-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 8px; border-radius: 999px;
+    font-size: 11px; font-weight: 600; letter-spacing: .02em;
+    border: 1px solid transparent; min-width: 36px; justify-content: center;
+  }
+  .bucket-pill .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .bucket-pill.live { background: var(--green-soft); color: var(--green); }
+  .bucket-pill.live .dot { background: var(--green-dot); }
+  .bucket-pill.upcoming { background: var(--amber-soft); color: var(--amber); }
+  .bucket-pill.upcoming .dot { background: var(--amber-dot); }
+  .bucket-pill.in_progress { background: var(--blue-soft); color: var(--brand); }
+  .bucket-pill.in_progress .dot { background: var(--blue-dot); }
+  .bucket-pill.monitoring { background: var(--slate-soft); color: var(--slate); }
+  .bucket-pill.monitoring .dot { background: var(--slate-dot); }
+  .bucket-pill.repealed { background: var(--red-soft); color: var(--red); }
+  .bucket-pill.empty { background: transparent; color: var(--muted-2); border-color: var(--border); }
+  td.bucket-cell .count { opacity: .75; font-weight: 500; font-variant-numeric: tabular-nums; }
+
+  /* Changes detail table */
+  td.job { white-space: nowrap; color: var(--ink-soft); font-size: 12.5px; }
   td.title { font-weight: 500; }
   td.title .summary { color: var(--muted); font-weight: 400; font-size: 12.5px; margin-top: 3px; line-height: 1.45; }
   td.eff { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--slate); }
+  td.updated { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--muted); font-size: 12px; }
   td.source a { font-size: 11.5px; }
-
   .badge {
     font-size: 10.5px; font-weight: 700;
     padding: 3px 9px; border-radius: 999px;
@@ -173,31 +208,21 @@
   }
   .badge.live { background: var(--green-soft); color: var(--green); }
   .badge.upcoming { background: var(--amber-soft); color: var(--amber); }
-  .badge.in_progress { background: var(--brand-soft); color: var(--brand); }
+  .badge.in_progress { background: var(--blue-soft); color: var(--brand); }
   .badge.monitoring { background: var(--slate-soft); color: var(--slate); }
   .badge.repealed { background: var(--red-soft); color: var(--red); }
 
-  .empty-state {
-    padding: 64px 20px; text-align: center;
-    color: var(--muted); font-size: 14px;
-  }
+  .empty-state { padding: 48px 20px; text-align: center; color: var(--muted); font-size: 14px; }
   .empty-state h3 { margin: 0 0 6px 0; color: var(--ink); }
+  .err { background: var(--red-soft); border: 1px solid var(--red); color: var(--red); padding: 10px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 14px; }
 
-  .err {
-    background: var(--red-soft); border: 1px solid var(--red);
-    color: var(--red); padding: 10px 14px; border-radius: 10px; font-size: 13px;
-    margin-bottom: 14px;
-  }
-
-  /* Footer */
   .footer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 28px; }
 
-  /* Compact mode for small screens */
-  @media (max-width: 900px) {
+  /* Compact mode */
+  @media (max-width: 1100px) {
     .wrap { padding: 16px; }
-    thead th, tbody td { padding: 8px 10px; }
-    td.region, td.eff { display: none; }
-    th.region, th.eff { display: none; }
+    thead th, tbody td { padding: 8px 8px; }
+    td.region { display: none; } th.region { display: none; }
   }
 </style>
 </head>
@@ -214,7 +239,7 @@
 <div class="wrap">
   <div id="error-zone"></div>
 
-  <div class="stats" id="stats">
+  <div class="stats">
     <div class="stat"><div class="lbl">Countries</div><div class="num" id="s-countries">—</div><div class="sub">EMEA · APAC · LATAM · NA</div></div>
     <div class="stat"><div class="lbl">Regulations</div><div class="num" id="s-regs">—</div><div class="sub">across 6 jobs</div></div>
     <div class="stat"><div class="lbl">Live mandates</div><div class="num" id="s-live">—</div><div class="sub">in force today</div></div>
@@ -242,11 +267,32 @@
     </div>
   </div>
 
+  <!-- ============ COUNTRY MATRIX ============ -->
+  <div class="section-title">
+    <h2>Country compliance matrix</h2>
+    <div class="meta"><strong id="matrix-count">0</strong> countries · click any column header to sort · scroll for more</div>
+  </div>
   <div class="table-wrap">
-    <div class="table-meta">
-      <strong id="result-count">0</strong> results
-      <span id="filter-summary"></span>
+    <div class="matrix-scroll">
+      <table id="matrix">
+        <thead>
+          <tr id="matrix-head"></tr>
+        </thead>
+        <tbody id="matrix-body"></tbody>
+      </table>
+      <div id="matrix-empty" class="empty-state" style="display:none">
+        <h3>No countries match your filters</h3>
+        <div>Try clearing some filters or broadening the search.</div>
+      </div>
     </div>
+  </div>
+
+  <!-- ============ CHANGES LIST ============ -->
+  <div class="section-title">
+    <h2>All regulations — newest first</h2>
+    <div class="meta"><strong id="result-count">0</strong> results <span id="filter-summary"></span></div>
+  </div>
+  <div class="table-wrap">
     <table id="t">
       <thead>
         <tr>
@@ -255,8 +301,9 @@
           <th data-key="job">Compliance Job <span class="sort-arrow"></span></th>
           <th data-key="title">Regulation <span class="sort-arrow"></span></th>
           <th data-key="status">Status <span class="sort-arrow"></span></th>
-          <th data-key="eff" class="eff">Effective <span class="sort-arrow"></span></th>
-          <th data-key="source">Source</th>
+          <th data-key="eff">Effective <span class="sort-arrow"></span></th>
+          <th data-key="updated">Updated <span class="sort-arrow"></span></th>
+          <th class="no-sort">Source</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -273,12 +320,16 @@
 <script>
 const REGION_LABEL = { EMEA: "EMEA", APAC: "APAC", LATAM: "LATAM", NORTH_AMERICA: "North America" };
 const STATUS_LABEL = { live: "Live", upcoming: "Upcoming", in_progress: "In progress", monitoring: "Monitoring", repealed: "Repealed" };
-const STATUS_ORDER = ["live", "upcoming", "in_progress", "monitoring", "repealed"];
+const STATUS_ORDER = ["live", "upcoming", "in_progress", "monitoring", "repealed"]; // priority for "best" status per cell
+const STATUS_RANK = Object.fromEntries(STATUS_ORDER.map((s, i) => [s, i]));
 
 let DATA = null;
-let ROWS = [];
+let ROWS = [];                    // flattened per-regulation rows
+let COUNTRY_ROWS = [];            // one per country (matrix)
+let JOBS = [];                    // ordered job list from data
 let FILTERS = { region: new Set(), job: new Set(), status: new Set(), q: "" };
-let SORT = { key: "country", dir: "asc" };
+let SORT_LIST = { key: "updated", dir: "desc" };
+let SORT_MATRIX = { key: "country", dir: "asc" };
 
 async function boot() {
   try {
@@ -290,10 +341,14 @@ async function boot() {
       `<div class="err">Couldn't load <code>data.json</code> — make sure the file is published next to <code>index.html</code>. (${e.message})</div>`;
     return;
   }
+  JOBS = DATA.compliance_jobs;
   flatten();
+  buildCountryMatrix();
   renderStats();
   renderFilters();
+  renderMatrixHead();
   bindEvents();
+  renderMatrix();
   renderTable();
   renderHeader();
 }
@@ -301,22 +356,41 @@ async function boot() {
 function flatten() {
   ROWS = [];
   const jobName = {};
-  DATA.compliance_jobs.forEach(j => jobName[j.id] = j.name);
+  JOBS.forEach(j => jobName[j.id] = j.name);
   DATA.countries.forEach(c => {
     Object.entries(c.compliance || {}).forEach(([jobId, items]) => {
       items.forEach(e => {
         ROWS.push({
-          country: c.name, iso: c.iso, region: c.region, currency: c.currency,
+          country: c.name, iso: c.iso, region: c.region,
           job: jobName[jobId] || jobId, jobId,
           title: e.title || "", summary: e.summary || "",
           status: e.status || "monitoring",
           eff: e.effective_date || "TBD",
+          updated: e.last_updated || c.last_synced || "",
           source: e.source || "",
-          source_type: e.source_type || "",
-          last_updated: e.last_updated || c.last_synced || ""
         });
       });
     });
+  });
+}
+
+function buildCountryMatrix() {
+  COUNTRY_ROWS = DATA.countries.map(c => {
+    const row = {
+      country: c.name, iso: c.iso, region: c.region,
+      total: 0, last_synced: c.last_synced || "",
+      buckets: {} // jobId -> {bestStatus, count, statusBreakdown}
+    };
+    JOBS.forEach(j => {
+      const items = (c.compliance && c.compliance[j.id]) || [];
+      let best = null;
+      items.forEach(e => {
+        if (best === null || STATUS_RANK[e.status] < STATUS_RANK[best]) best = e.status;
+      });
+      row.buckets[j.id] = { bestStatus: best, count: items.length };
+      row.total += items.length;
+    });
+    return row;
   });
 }
 
@@ -332,23 +406,20 @@ function renderStats() {
 }
 
 function renderFilters() {
-  // Region chips
   const regionEl = document.getElementById("f-region");
   const regionCounts = {};
   ROWS.forEach(r => regionCounts[r.region] = (regionCounts[r.region] || 0) + 1);
   ["EMEA","APAC","LATAM","NORTH_AMERICA"].forEach(rg => {
     if (!regionCounts[rg]) return;
-    regionEl.appendChild(makeChip(REGION_LABEL[rg], regionCounts[rg], () => toggleSet(FILTERS.region, rg)));
+    regionEl.appendChild(makeChip(REGION_LABEL[rg], regionCounts[rg], () => toggleSet(FILTERS.region, rg), { region: rg }));
   });
 
-  // Job chips
   const jobEl = document.getElementById("f-job");
-  DATA.compliance_jobs.forEach(j => {
+  JOBS.forEach(j => {
     const n = ROWS.filter(r => r.jobId === j.id).length;
     jobEl.appendChild(makeChip(j.name, n, () => toggleSet(FILTERS.job, j.id), { jobId: j.id }));
   });
 
-  // Status chips
   const statusEl = document.getElementById("f-status");
   STATUS_ORDER.forEach(s => {
     const n = ROWS.filter(r => r.status === s).length;
@@ -360,54 +431,138 @@ function renderFilters() {
 function makeChip(label, count, onClick, extra={}) {
   const btn = document.createElement("button");
   btn.className = "chip";
-  btn.innerHTML = `${label}<span class="count">${count}</span>`;
+  btn.innerHTML = `${escapeHtml(label)}<span class="count">${count}</span>`;
   Object.entries(extra).forEach(([k, v]) => btn.dataset[k] = v);
-  btn.addEventListener("click", () => { onClick(); refreshChipStates(); renderTable(); });
+  btn.addEventListener("click", () => { onClick(); refreshChipStates(); renderAll(); });
   return btn;
 }
-
-function toggleSet(set, v) {
-  if (set.has(v)) set.delete(v); else set.add(v);
-}
-
+function toggleSet(set, v) { set.has(v) ? set.delete(v) : set.add(v); }
 function refreshChipStates() {
-  document.querySelectorAll("#f-region .chip").forEach(c => {
-    const region = invertRegionLabel(c.firstChild.textContent);
-    c.classList.toggle("active", FILTERS.region.has(region));
-  });
-  document.querySelectorAll("#f-job .chip").forEach(c => {
-    c.classList.toggle("active", FILTERS.job.has(c.dataset.jobId));
-  });
-  document.querySelectorAll("#f-status .chip").forEach(c => {
-    c.classList.toggle("active", FILTERS.status.has(c.dataset.status));
-  });
+  document.querySelectorAll("#f-region .chip").forEach(c => c.classList.toggle("active", FILTERS.region.has(c.dataset.region)));
+  document.querySelectorAll("#f-job .chip").forEach(c => c.classList.toggle("active", FILTERS.job.has(c.dataset.jobId)));
+  document.querySelectorAll("#f-status .chip").forEach(c => c.classList.toggle("active", FILTERS.status.has(c.dataset.status)));
 }
 
-function invertRegionLabel(label) {
-  return Object.keys(REGION_LABEL).find(k => REGION_LABEL[k] === label) || label;
+function renderMatrixHead() {
+  const head = document.getElementById("matrix-head");
+  head.innerHTML = `
+    <th data-target="matrix" data-key="country">Country <span class="sort-arrow"></span></th>
+    <th data-target="matrix" data-key="region">Region <span class="sort-arrow"></span></th>
+  ` + JOBS.map(j => `<th data-target="matrix" data-key="job:${j.id}" style="text-align:center">${escapeHtml(shortJobName(j.name))} <span class="sort-arrow"></span></th>`).join("") + `
+    <th data-target="matrix" data-key="total">Total <span class="sort-arrow"></span></th>
+  `;
+}
+function shortJobName(n) {
+  // shorten for column headers, keep recognizable
+  const map = {
+    "Tax Filing & Returns": "Tax Filing",
+    "VAT/GST Compliance": "VAT/GST",
+    "E-Invoicing": "E-Invoicing",
+    "Payroll Tax & Social Contributions": "Payroll",
+    "Local GAAP & Statutory Reporting": "Local GAAP",
+    "Banking & Payments Compliance": "Banking & Payments"
+  };
+  return map[n] || n;
 }
 
 function bindEvents() {
   document.getElementById("search").addEventListener("input", (e) => {
     FILTERS.q = e.target.value.trim().toLowerCase();
-    renderTable();
+    renderAll();
   });
   document.getElementById("clear-filters").addEventListener("click", () => {
     FILTERS.region.clear(); FILTERS.job.clear(); FILTERS.status.clear(); FILTERS.q = "";
     document.getElementById("search").value = "";
-    refreshChipStates(); renderTable();
+    refreshChipStates(); renderAll();
   });
-  document.querySelectorAll("thead th").forEach(th => {
-    if (!th.dataset.key) return;
-    th.addEventListener("click", () => {
-      if (SORT.key === th.dataset.key) SORT.dir = SORT.dir === "asc" ? "desc" : "asc";
-      else { SORT.key = th.dataset.key; SORT.dir = "asc"; }
-      renderTable();
-    });
+  // Sort handlers — both tables
+  document.body.addEventListener("click", (ev) => {
+    const th = ev.target.closest("th[data-key]"); if (!th) return;
+    if (th.classList.contains("no-sort")) return;
+    const target = th.dataset.target || "list";
+    const sort = target === "matrix" ? SORT_MATRIX : SORT_LIST;
+    if (sort.key === th.dataset.key) sort.dir = sort.dir === "asc" ? "desc" : "asc";
+    else { sort.key = th.dataset.key; sort.dir = "asc"; }
+    if (target === "matrix") renderMatrix(); else renderTable();
   });
 }
 
-function applyFilters(rows) {
+function renderAll() { renderMatrix(); renderTable(); }
+
+/* ---------- Country matrix ---------- */
+function renderMatrix() {
+  const filtered = applyMatrixFilters(COUNTRY_ROWS).sort(compareMatrix);
+  document.getElementById("matrix-count").textContent = filtered.length;
+
+  const body = document.getElementById("matrix-body");
+  body.innerHTML = "";
+  if (!filtered.length) { document.getElementById("matrix-empty").style.display = ""; return; }
+  document.getElementById("matrix-empty").style.display = "none";
+
+  const frag = document.createDocumentFragment();
+  filtered.forEach(c => {
+    const tr = document.createElement("tr");
+    let cells = `
+      <td class="country">${escapeHtml(c.country)}<span class="iso">${c.iso}</span></td>
+      <td class="region">${REGION_LABEL[c.region] || c.region}</td>
+    `;
+    JOBS.forEach(j => {
+      const b = c.buckets[j.id];
+      if (!b || b.count === 0) {
+        cells += `<td class="bucket-cell"><span class="bucket-pill empty">—</span></td>`;
+      } else {
+        cells += `<td class="bucket-cell"><span class="bucket-pill ${b.bestStatus}" title="${STATUS_LABEL[b.bestStatus]} (${b.count})"><span class="dot"></span><span class="count">${b.count}</span></span></td>`;
+      }
+    });
+    cells += `<td class="bucket-cell" style="font-weight:600">${c.total}</td>`;
+    tr.innerHTML = cells;
+    frag.appendChild(tr);
+  });
+  body.appendChild(frag);
+  syncSortArrows("matrix", SORT_MATRIX);
+}
+
+function applyMatrixFilters(rows) {
+  // A country shows up if at least one of its (filtered) regulations passes.
+  // Filters apply to per-bucket regulations: we treat bucket-level filtering smartly.
+  const jobActive = FILTERS.job.size > 0;
+  const statusActive = FILTERS.status.size > 0;
+  const q = FILTERS.q;
+  return rows.filter(c => {
+    if (FILTERS.region.size && !FILTERS.region.has(c.region)) return false;
+    // Look at this country's underlying regulations to see if any pass job/status/q
+    const matchingRegs = ROWS.filter(r => r.iso === c.iso &&
+      (!jobActive || FILTERS.job.has(r.jobId)) &&
+      (!statusActive || FILTERS.status.has(r.status)) &&
+      (!q || (r.country + " " + r.iso + " " + r.title + " " + r.summary + " " + r.job).toLowerCase().includes(q))
+    );
+    if (jobActive || statusActive || q) return matchingRegs.length > 0;
+    return true;
+  });
+}
+
+function compareMatrix(a, b) {
+  const k = SORT_MATRIX.key, dir = SORT_MATRIX.dir;
+  let av, bv;
+  if (k === "country") { av = a.country; bv = b.country; }
+  else if (k === "region") { av = a.region; bv = b.region; }
+  else if (k === "total") { av = a.total; bv = b.total; }
+  else if (k.startsWith("job:")) {
+    const jid = k.slice(4);
+    // Sort by status rank (best first when asc), then count desc as tiebreak
+    const ar = a.buckets[jid].bestStatus !== null ? STATUS_RANK[a.buckets[jid].bestStatus] : 99;
+    const br = b.buckets[jid].bestStatus !== null ? STATUS_RANK[b.buckets[jid].bestStatus] : 99;
+    if (ar !== br) return dir === "asc" ? ar - br : br - ar;
+    av = a.buckets[jid].count; bv = b.buckets[jid].count;
+    return dir === "asc" ? bv - av : av - bv; // higher count "better"
+  } else { av = ""; bv = ""; }
+  if (av < bv) return dir === "asc" ? -1 : 1;
+  if (av > bv) return dir === "asc" ?  1 : -1;
+  return 0;
+}
+
+/* ---------- Detail list ---------- */
+function applyListFilters(rows) {
   return rows.filter(r => {
     if (FILTERS.region.size && !FILTERS.region.has(r.region)) return false;
     if (FILTERS.job.size && !FILTERS.job.has(r.jobId)) return false;
@@ -420,26 +575,26 @@ function applyFilters(rows) {
   });
 }
 
-function compareRows(a, b) {
-  const k = SORT.key;
+function compareList(a, b) {
+  const k = SORT_LIST.key, dir = SORT_LIST.dir;
   let av, bv;
   switch (k) {
     case "country": av = a.country; bv = b.country; break;
     case "region":  av = a.region;  bv = b.region;  break;
     case "job":     av = a.job;     bv = b.job;     break;
     case "title":   av = a.title;   bv = b.title;   break;
-    case "status":  av = STATUS_ORDER.indexOf(a.status); bv = STATUS_ORDER.indexOf(b.status); break;
+    case "status":  av = STATUS_RANK[a.status]; bv = STATUS_RANK[b.status]; break;
     case "eff":     av = effSortVal(a.eff); bv = effSortVal(b.eff); break;
+    case "updated": av = a.updated || ""; bv = b.updated || ""; break;
     default: av = ""; bv = "";
   }
-  if (av < bv) return SORT.dir === "asc" ? -1 : 1;
-  if (av > bv) return SORT.dir === "asc" ?  1 : -1;
+  if (av < bv) return dir === "asc" ? -1 : 1;
+  if (av > bv) return dir === "asc" ?  1 : -1;
   return 0;
 }
 
 function effSortVal(s) {
   if (!s || s === "TBD" || s === "rolling") return "9999-99-99";
-  // YYYY-MM-DD or YYYY-Qn or YYYY-MM
   if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
   if (/^\d{4}-Q[1-4]$/.test(s)) {
     const [y, q] = s.split("-Q");
@@ -450,19 +605,15 @@ function effSortVal(s) {
 }
 
 function renderTable() {
-  const filtered = applyFilters(ROWS).sort(compareRows);
+  const filtered = applyListFilters(ROWS).sort(compareList);
   document.getElementById("result-count").textContent = filtered.length.toLocaleString();
   document.getElementById("filter-summary").textContent = filterSummary();
 
   const tbody = document.getElementById("tbody");
   tbody.innerHTML = "";
-  if (!filtered.length) {
-    document.getElementById("empty-state").style.display = "";
-    return;
-  }
+  if (!filtered.length) { document.getElementById("empty-state").style.display = ""; syncSortArrows("list", SORT_LIST); return; }
   document.getElementById("empty-state").style.display = "none";
 
-  // build rows
   const frag = document.createDocumentFragment();
   filtered.forEach(r => {
     const tr = document.createElement("tr");
@@ -473,19 +624,23 @@ function renderTable() {
       <td class="title">${escapeHtml(r.title)}<div class="summary">${escapeHtml(r.summary)}</div></td>
       <td class="status"><span class="badge ${r.status}">${STATUS_LABEL[r.status] || r.status}</span></td>
       <td class="eff">${escapeHtml(r.eff)}</td>
+      <td class="updated">${shortDate(r.updated)}</td>
       <td class="source">${r.source ? `<a href="${escapeAttr(r.source)}" target="_blank" rel="noopener">view ↗</a>` : "—"}</td>
     `;
     frag.appendChild(tr);
   });
   tbody.appendChild(frag);
+  syncSortArrows("list", SORT_LIST);
+}
 
-  // sort arrows
-  document.querySelectorAll("thead th").forEach(th => {
+function syncSortArrows(target, sort) {
+  const sel = target === "matrix" ? '#matrix-head th' : '#t thead th[data-key]';
+  document.querySelectorAll(sel).forEach(th => {
     th.classList.remove("sorted-asc", "sorted-desc");
     const arrow = th.querySelector(".sort-arrow"); if (arrow) arrow.textContent = "";
-    if (th.dataset.key === SORT.key) {
-      th.classList.add(SORT.dir === "asc" ? "sorted-asc" : "sorted-desc");
-      if (arrow) arrow.textContent = SORT.dir === "asc" ? "▲" : "▼";
+    if (th.dataset.key === sort.key) {
+      th.classList.add(sort.dir === "asc" ? "sorted-asc" : "sorted-desc");
+      if (arrow) arrow.textContent = sort.dir === "asc" ? "▲" : "▼";
     }
   });
 }
@@ -494,7 +649,7 @@ function filterSummary() {
   const parts = [];
   if (FILTERS.region.size) parts.push([...FILTERS.region].map(r => REGION_LABEL[r] || r).join(", "));
   if (FILTERS.job.size) {
-    const names = DATA.compliance_jobs.filter(j => FILTERS.job.has(j.id)).map(j => j.name);
+    const names = JOBS.filter(j => FILTERS.job.has(j.id)).map(j => j.name);
     parts.push(names.join(", "));
   }
   if (FILTERS.status.size) parts.push([...FILTERS.status].map(s => STATUS_LABEL[s] || s).join(", "));
@@ -504,12 +659,9 @@ function filterSummary() {
 
 function renderHeader() {
   const generated = DATA.generated_at ? new Date(DATA.generated_at) : null;
-  document.getElementById("last-build").textContent = generated
-    ? `last sync ${shortDate(DATA.generated_at)}` : "no sync yet";
-  document.getElementById("sub-line").textContent =
-    `${DATA.countries.length} countries · ${DATA.compliance_jobs.length} compliance jobs · ${ROWS.length} regulations tracked`;
-  document.getElementById("footer-line").textContent =
-    `Updated weekly by regulatory-tracker-friday-digest · last build ${generated ? generated.toUTCString() : "—"}`;
+  document.getElementById("last-build").textContent = generated ? `last sync ${shortDate(DATA.generated_at)}` : "no sync yet";
+  document.getElementById("sub-line").textContent = `${DATA.countries.length} countries · ${JOBS.length} compliance jobs · ${ROWS.length} regulations`;
+  document.getElementById("footer-line").textContent = `Updated weekly by regulatory-tracker-friday-digest · last build ${generated ? generated.toUTCString() : "—"}`;
 }
 
 function shortDate(iso) {
